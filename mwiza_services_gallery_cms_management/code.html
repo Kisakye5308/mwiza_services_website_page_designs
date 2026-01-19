@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services Gallery CMS Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "card-dark": "#1e1e1e",
+                        "sidebar-dark": "#181818",
+                        "border-dark": "#2d2d2d"
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .serif-font {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="w-72 bg-white dark:bg-sidebar-dark border-r border-slate-200 dark:border-border-dark flex flex-col h-screen sticky top-0">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">diamond</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight serif-font">Mwiza Services</h1>
+<p class="text-slate-500 dark:text-primary text-xs font-medium uppercase tracking-widest">Premium Events CMS</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-card-dark transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined fill-icon">gallery_thumbnail</span>
+<span class="text-sm font-semibold">Media Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-card-dark transition-colors" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="text-sm font-semibold">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-card-dark transition-colors" href="#">
+<span class="material-symbols-outlined">concierge</span>
+<span class="text-sm font-semibold">Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-card-dark transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-semibold">Staffing</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-border-dark">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-card-dark transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- PageHeading -->
+<header class="px-8 pt-10 pb-6">
+<div class="flex flex-wrap items-center justify-between gap-6 max-w-7xl mx-auto">
+<div class="space-y-1">
+<h2 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-tight serif-font">Media Management</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Organize and update the luxury portfolio for the public website.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-background-dark px-6 py-3 rounded-lg font-bold text-sm transition-all transform hover:scale-[1.02] shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined">cloud_upload</span>
+<span>Upload New Media</span>
+</button>
+</div>
+</header>
+<!-- Filter Bar (Chips) -->
+<section class="px-8 pb-4">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-background-dark px-6 text-sm font-bold shadow-sm">
+                        All Portfolio
+                    </button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark text-slate-700 dark:text-slate-300 px-6 text-sm font-medium hover:border-primary transition-colors">
+                        Ushers
+                    </button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark text-slate-700 dark:text-slate-300 px-6 text-sm font-medium hover:border-primary transition-colors">
+                        Cocktails
+                    </button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark text-slate-700 dark:text-slate-300 px-6 text-sm font-medium hover:border-primary transition-colors">
+                        Juices
+                    </button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark text-slate-700 dark:text-slate-300 px-6 text-sm font-medium hover:border-primary transition-colors">
+                        Decor
+                    </button>
+</div>
+</div>
+</section>
+<!-- Media Visibility Action Panel (Global Toggle) -->
+<section class="px-8 py-4">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col @[480px]:flex-row @[480px]:items-center justify-between gap-4 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-sidebar-dark p-5">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-base font-bold serif-font">Gallery Global Visibility</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Toggle visibility for the entire gallery section on the landing page.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Publicly Visible</span>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Grid -->
+<section class="px-8 py-6 flex-1 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Grid Item 1 -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional ushers in gold and black uniforms" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqwaTD-bg5ZyRVMAb2A3Xj0x66U8gsjTvwbe2DgQGQbV1jBoz_FWfnBWkuMStDFGiLWd_W5LQj7NoLRumIAUJE5D-8HAUo2yeXfiWdyomn53f0sdNSZmsqgdMXYJrfKy-9Y2Mf4Qj3IBtXZ885-d7C4Dxvb2-BpHlgtCSQs6tg7A2vhMM0zQFj8N_uO1f1cUEZ4B3sR9VsY0f-nMiarBaWXPvGErUqz4wnh410n-H6wA_0B78QBpjoXzsdNq_AxZMfBqZlhPfUceIU");'>
+</div>
+<!-- Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<!-- Status Badge -->
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Active</span>
+</div>
+<!-- Label -->
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Ushers Team - Royal Wedding</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Exotic cocktail glass with garnish on tray" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4krkIrQB7QpzAbpMOtr2EImSRXdepa9Oiz2gWU6wnwr-TH1PGPPePtqWsAVTnI6a5yJU-VX0fMOoMVCIzL_f7vCHjgqPk9hn2tqHakFQ44HhQYvE7RmjPPHHLzaYrvq7rt_wflDjnAG_dtSlPft-QBGBK_b1-CdIZDDSAKk_mIgU4TIei88hcPvhqeyQljQyyRpfw4txgdN_fTrBPW83OeVimgLmBffZJYAqSAymRkYHQHLEYj7bHsAEhV3gNiyegqJUeA7aKG9Ps");'>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Active</span>
+</div>
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Signature Gold Cocktail</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern floral centerpieces on event tables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOOhdPenENZF-DUCZ6Hk_vrTHDrlkZzdTa3iuWQJrPpAaah66gNK9lrBmBnpe3NirhSlmZ12x9CvuxfZIlnPEbIFXW41zRbB55k0arafnvlh13Va545uGmnN2dniY5YyuBbZuIOpCpXD2CppV11mZs_QiMN1HOSr7jWYNmS5avZDC6MITL3xmDJkBYeymTMLOEe5xu5AOC3pllj2BOiJnAT28wZYYMzrgUcW67ObeN30N0SOKbxH6Iym_W5CPmGaFz9bIVwPGAYTec");'>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full opacity-50">
+<div class="w-2 h-2 rounded-full bg-slate-400"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Hidden</span>
+</div>
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Luxe Floral Decor Setup</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Grid Item 4 -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Freshly pressed tropical fruit juices" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVlEa0Ayvv94LyYLXS8C_muvKDvAJbXBkk_9djwvlz3PvEEXdAYWgpkvwHKtXrxrH7a-UUhJl5lWxv8rVkuzUB2z-WhaskSjrKs-K-LfCZpL6JVc0AafqErhu_MRe_hwOs9l9y5KZYJr67xLfM2tGfhXlIIU29f1pbIka1aPVE4tct9AWFYm87UJcE0ggvEcxnFk0NVkVhnEHv2ZQ2gyQP3gPpi9seCcpxIgfeHUWc5iM276R3phzky8I6v_Cec9KhNWq4JyFIizeB");'>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Active</span>
+</div>
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Premium Fruit Juice Bar</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Grid Item 5 (Repeat variant) -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Gold themed event table setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_WMocTEUhqTF1OLbtC9n8LfZ3_2ZR9axhskBd7djfcMoeKlXssnUWYLF7rUL1I9NOZDN6waKoxNB7fhQ7JQ0EBrG0XFUBGOeeuq7CmXrgusfs_RhAKYlMVIhMWsJEoUajbpdVjj6jWxY7kMpKsyD-g14teVd0CMLXb41tfggsiokL6d1BxWpSGbKegb61_BAG6bXpCTNMlvv4wvpSvEZPDNJhSq3jRDq3wE8MkckTpIRtUtpmEbZOexnlpO1JfFcbf8F1FkavLTjz");'>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Active</span>
+</div>
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Golden Banquet Theme</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Grid Item 6 (Repeat variant) -->
+<div class="group relative bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-2xl hover:shadow-black/20">
+<div class="aspect-square bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Ushering team coordinating a gala event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCw-s7n9x6N6xCnRYnNc1QB2uPdXn4fyg2c46PU0pPnnyfLJ_VDIRAILFLuQwK6JPXPQ6may2HT7YDZL3uF4pIoxS0oDKxyhebquSyG13qEj6TPLlQvsoVYnAvuEXL4_XkQIM8I5BVxkxZ7gROO2Ns0M4N2nxzSTnsH0wbPVX40ENM6WpJ8HJ579afki9DAKnkxWzDlwn9GXzcNIqFlNqm1o_keBt7PpA7Lq4lyuFUJfMOIoCo-3wQI4y4PqE-b3-H6t9VMT9TeZ4Gr");'>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">Edit Details</span>
+</div>
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-background-dark/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-white font-bold uppercase tracking-tighter">Active</span>
+</div>
+<div class="p-4 bg-white dark:bg-card-dark border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-sm font-bold truncate pr-4">Corporate Gala Coordinators</p>
+<label class="relative flex h-[20px] w-[36px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[16px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="p-8 border-t border-slate-200 dark:border-border-dark text-center">
+<div class="max-w-7xl mx-auto flex flex-col items-center gap-2">
+<p class="text-slate-400 dark:text-slate-500 text-sm font-medium tracking-widest">© 2026 MWIZA SERVICES</p>
+<div class="w-8 h-[2px] bg-primary"></div>
+</div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services | Premium Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "accent-brown": "#3d2b1f",
+                        "soft-cream": "#f5f5f5",
+                        "deep-charcoal": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 10px rgba(242, 223, 13, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3d2b1f;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white min-h-screen overflow-x-hidden">
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-accent-brown/30">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight uppercase">Mwiza Services</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<button class="bg-primary text-black px-6 py-2 rounded-lg font-bold text-sm tracking-wide hover:opacity-90 transition-all">
+                        Contact
+                    </button>
+</nav>
+</div>
+</header>
+<!-- Main Content Section: Split Screen -->
+<main class="flex-grow flex flex-col md:flex-row pt-16 h-screen">
+<!-- Left Side: Visual Anchor -->
+<div class="hidden md:block w-1/2 relative overflow-hidden h-full">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transform hover:scale-105 transition-transform duration-1000" data-alt="Professional African usher in brown vest at luxury event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfphS6BrjkSq3wHgJ_-Ay4b_2iaOsJzZ7EKPjz81YSfCR_DxjLtv7h2B3I73Q4aQ30uPJo3cdvN3I23U17V7cXH8gV2LXTIOHPMlboS_tAoMuuR9biXhLbHA6CD6AIvEI8SqUdvoMTVPVqtGtzRfKMGfOIdDfx1bCKxZGlrLgckRUO2gtIOtZVOg7UiVJvltYUM_Ou-HyTOYldxmCDVufWiwn4rdb84IstarkHpuj_P-3OpeYXZkWi5_2-Ei0LrEZGQhegMvZZnZmV");'>
+</div>
+<div class="absolute bottom-16 left-16 z-20 max-w-md">
+<h1 class="text-5xl font-extrabold text-white mb-4 leading-tight">Elevating African Excellence.</h1>
+<p class="text-lg text-soft-cream/80 font-light">Experience premium event services tailored to the most prestigious occasions across Uganda.</p>
+</div>
+</div>
+<!-- Right Side: Booking Form -->
+<div class="w-full md:w-1/2 flex flex-col bg-background-dark px-6 md:px-16 py-12 overflow-y-auto custom-scrollbar">
+<div class="max-w-[520px] mx-auto w-full">
+<!-- Progress Bar Component -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-3">
+<div>
+<h3 class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-1">Step 01</h3>
+<h2 class="text-2xl font-bold">Premium Booking</h2>
+</div>
+<span class="text-primary text-sm font-bold">45% Complete</span>
+</div>
+<div class="h-1 w-full bg-accent-brown/30 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<!-- Full Name -->
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">FULL NAME</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown text-xl">person</span>
+<input class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 pl-12 pr-4 text-white placeholder:text-accent-brown/60 focus:border-primary focus:ring-0 transition-all" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Event Type Dropdown -->
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">EVENT TYPE</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown text-xl">event_seat</span>
+<select class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 pl-12 pr-4 text-white appearance-none focus:border-primary focus:ring-0 transition-all">
+<option disabled="" selected="" value="">Select event type</option>
+<option value="corporate">Corporate Gala</option>
+<option value="wedding">Luxury Wedding</option>
+<option value="private">Private VIP Party</option>
+<option value="cultural">Cultural Celebration</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-accent-brown pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Date & Time Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">DATE</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown text-xl">calendar_today</span>
+<input class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 pl-12 pr-4 text-white focus:border-primary focus:ring-0 transition-all [color-scheme:dark]" type="date"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">TIME</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown text-xl">schedule</span>
+<input class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 pl-12 pr-4 text-white focus:border-primary focus:ring-0 transition-all [color-scheme:dark]" type="time"/>
+</div>
+</div>
+</div>
+<!-- Location -->
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">LOCATION</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown text-xl">location_on</span>
+<input class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 pl-12 pr-4 text-white placeholder:text-accent-brown/60 focus:border-primary focus:ring-0 transition-all" data-location="Kampala" placeholder="e.g. Kampala Serena Hotel" type="text"/>
+</div>
+</div>
+<!-- Special Requirements -->
+<div class="flex flex-col gap-2">
+<label class="text-soft-cream/70 text-sm font-medium tracking-wide">SPECIAL REQUIREMENTS</label>
+<textarea class="form-input w-full bg-deep-charcoal border border-accent-brown rounded-lg py-4 px-4 text-white placeholder:text-accent-brown/60 focus:border-primary focus:ring-0 transition-all resize-none" placeholder="Tell us about any specific ushering or protocol needs..." rows="3"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="group relative w-full bg-primary py-5 rounded-lg overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(242,223,13,0.4)]" type="button">
+<div class="flex items-center justify-center gap-2">
+<span class="text-black font-extrabold text-base uppercase tracking-widest">Book Now</span>
+<span class="material-symbols-outlined text-black font-bold group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<p class="text-center text-accent-brown text-xs font-medium uppercase tracking-tighter">
+                            Secure your dates with Uganda's premier event hosts
+                        </p>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-accent-brown/20 py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">© 2026 Mwiza Services</span>
+<span class="h-1 w-1 bg-accent-brown rounded-full"></span>
+<span class="text-soft-cream/40 text-xs uppercase tracking-widest">Elevating African Excellence</span>
+</div>
+<div class="flex gap-6">
+<a class="text-soft-cream/50 hover:text-primary transition-colors" href="#">
+<span class="text-[10px] font-bold uppercase tracking-widest">Terms</span>
+</a>
+<a class="text-soft-cream/50 hover:text-primary transition-colors" href="#">
+<span class="text-[10px] font-bold uppercase tracking-widest">Privacy</span>
+</a>
+<a class="text-soft-cream/50 hover:text-primary transition-colors" href="#">
+<span class="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
+</a>
+</div>
+</footer>
+</div>
+</body></html>

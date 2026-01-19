@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services Admin Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                        "mwiza-brown": "#2D1B0D",
+                        "mwiza-black": "#0a0a05",
+                        "mwiza-tan": "#cbc690"
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .premium-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(242, 223, 13, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .yellow-underline {
+            position: relative;
+        }
+        .yellow-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #f2df0d;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-mwiza-black font-display overflow-hidden">
+<div class="flex min-h-screen w-full flex-col lg:flex-row">
+<!-- Left Section: Branding & Visuals -->
+<div class="relative hidden lg:flex w-1/2 flex-col items-center justify-center bg-mwiza-brown premium-texture border-r border-primary/10 overflow-hidden">
+<!-- Subtle Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-br from-black/40 to-transparent"></div>
+<div class="relative z-10 flex flex-col items-center gap-8 px-12 text-center">
+<!-- Large Gold Logo -->
+<div class="w-32 h-32 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-white text-5xl font-black tracking-tight leading-tight">Mwiza Services</h1>
+<p class="text-mwiza-tan mt-4 text-lg font-normal max-w-md">
+                        The gold standard in premium Ugandan event management and luxury experiences.
+                    </p>
+</div>
+</div>
+<!-- Bottom decorative element -->
+<div class="absolute bottom-10 left-10 flex items-center gap-2 text-primary/40 text-sm">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="tracking-widest uppercase">Encrypted Dashboard Access</span>
+</div>
+</div>
+<!-- Right Section: Login Form -->
+<div class="flex flex-1 flex-col justify-center items-center bg-background-light dark:bg-mwiza-black px-6 py-12 lg:px-24">
+<div class="w-full max-w-[440px] flex flex-col gap-10">
+<!-- Header -->
+<header class="flex flex-col gap-2">
+<div class="lg:hidden flex items-center gap-3 text-primary mb-8">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">Mwiza Services</h2>
+</div>
+<h1 class="text-white text-4xl font-bold yellow-underline mb-4">Admin Login</h1>
+<p class="text-mwiza-tan text-base font-normal mt-4">
+                        Please enter your credentials to access the secure management panel.
+                    </p>
+</header>
+<!-- Form -->
+<form class="flex flex-col gap-6">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-sm font-medium leading-normal">Email Address</label>
+<input class="form-input w-full rounded-lg text-white border border-[#494622] bg-[#232110] focus:border-primary focus:ring-1 focus:ring-primary h-14 placeholder:text-[#686331] px-4 text-base transition-all" placeholder="admin@mwizaservices.com" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="text-white text-sm font-medium leading-normal">Password</label>
+<a class="text-mwiza-tan hover:text-primary text-sm font-normal transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative flex items-center">
+<input class="form-input w-full rounded-lg text-white border border-[#494622] bg-[#232110] focus:border-primary focus:ring-1 focus:ring-primary h-14 placeholder:text-[#686331] px-4 pr-12 text-base transition-all" placeholder="••••••••" type="password"/>
+<div class="absolute right-4 text-[#686331] hover:text-primary cursor-pointer flex items-center">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-14 bg-primary text-mwiza-black text-lg font-bold hover:bg-primary/90 transition-all active:scale-[0.98]" type="submit">
+                            Login to Dashboard
+                        </button>
+</div>
+</form>
+<!-- Footer Navigation -->
+<div class="flex flex-col items-center gap-6 border-t border-[#494622] pt-8">
+<button class="flex items-center gap-2 text-mwiza-tan hover:text-primary transition-colors text-sm font-bold group">
+<span class="material-symbols-outlined text-primary group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        Back to Website
+                    </button>
+<p class="text-[#494622] text-xs font-normal">
+                        © 2024 Mwiza Services. All rights reserved.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative image (Absolute Positioned if needed for desktop feel) -->
+<div class="fixed bottom-0 right-0 w-64 h-64 opacity-5 pointer-events-none overflow-hidden select-none">
+<img class="w-full h-full object-cover" data-alt="Faint abstract pattern representing luxury fabric texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMh9kFDRid1ypvN1aMYaw6D6VyF8DDecijABVyci_cSFPBLchxMU_TtlU5fzRt5MMKe4-Xcr31eRxKNLmxMddqdXy_0Vulbzdqbqx-uN2cjGlEwoQnzkhdrS1H2jWqROK0Pxd-5VomWDz9AbYgjc720Pue_Y9YvAgReKS8eVJlIYVF4JCnW4op2RR_OOvuFa8Ejj6ynQSiDd_wtoM_FIHXGSnOkPP1bmTlGq8dxEZhB3lCYvCKoaHw6ag4OBeSml6ndelXNlkryikl"/>
+</div>
+</body></html>

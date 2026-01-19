@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services - Locations &amp; Coverage Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "card-dark": "#1a1a1a",
+                        "deep-black": "#0a0a0a",
+                        "accent-brown": "#494622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Newsreader', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-item-active {
+            @apply border-l-4 border-primary bg-accent-brown/20 text-primary;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen flex">
+<aside class="w-64 border-r border-accent-brown/30 bg-deep-black flex flex-col h-screen sticky top-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-10">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-background-dark shrink-0">
+<span class="material-symbols-outlined font-bold">diamond</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight font-display">Mwiza Admin</h2>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 sidebar-item-active" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-sm font-medium">Locations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="text-sm font-medium">Services</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-accent-brown/10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center border border-accent-brown/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEKgLxX7HhyksCb0Q38hTCg-jLsaj2etbjr1aC5A55QaR7azYuUdO1kmusWTGuaoukixpFyyyuHzPr17cCqe8fF1759mkjTkSeTxbdXZ5qLW2VuKrsSWy2Riz9ZH6t9FNXW4d4xteDSOJcIjXTMVVye-m8AErH3wdrNT3FKDt5SJM5Yo9x1NI-jhhs5NCthY5EzFAuIqYc8_IF4RFE16iCvoyYTFPy-pEHmHeXvckugip6CAjaFkeeZLejh92-i8kSyjkfZYSb8z1u');"></div>
+<div>
+<p class="text-xs font-bold">Admin User</p>
+<p class="text-[10px] text-slate-500">System Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col">
+<header class="h-16 border-b border-accent-brown/20 flex items-center justify-between px-10 bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4 text-sm">
+<span class="text-slate-500">Admin</span>
+<span class="material-symbols-outlined text-xs text-slate-600">chevron_right</span>
+<span class="text-primary">Locations &amp; Coverage</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-primary rounded-full border border-background-dark"></span>
+</button>
+</div>
+</header>
+<div class="p-10 max-w-7xl w-full mx-auto flex-1">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h1 class="text-4xl md:text-5xl font-display font-bold tracking-tight relative inline-block">
+                        Locations &amp; Coverage
+                        <span class="absolute bottom-[-8px] left-0 w-1/3 h-1 bg-primary rounded-full"></span>
+</h1>
+<p class="mt-6 text-slate-400 max-w-xl">Manage the geographic service areas for Mwiza's premium event offerings across Uganda. Toggle service availability for specific regions.</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-4 bg-primary text-background-dark rounded font-bold text-sm hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-xl">add_location</span>
+                    Add New Location
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="h-32 bg-accent-brown/10 relative overflow-hidden">
+<img alt="Kampala Map" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-black to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-widest rounded border border-primary/30">Hub 01</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-display font-bold">Kampala</h3>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">edit_location</span>
+</button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8 pt-4 border-t border-accent-brown/10">
+<span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Service Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-xs font-bold text-primary">ACTIVE</span>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="h-32 bg-accent-brown/10 relative overflow-hidden">
+<img alt="Entebbe Map" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-black to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-widest rounded border border-primary/30">Hub 02</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-display font-bold">Entebbe</h3>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">edit_location</span>
+</button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8 pt-4 border-t border-accent-brown/10">
+<span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Service Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-xs font-bold text-primary">ACTIVE</span>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="h-32 bg-accent-brown/10 relative overflow-hidden">
+<img alt="Jinja Map" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-black to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-widest rounded border border-primary/30">Region E</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-display font-bold">Jinja</h3>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">edit_location</span>
+</button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8 pt-4 border-t border-accent-brown/10">
+<span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Service Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-xs font-bold text-slate-500">INACTIVE</span>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="h-32 bg-accent-brown/10 relative overflow-hidden">
+<img alt="Wakiso Map" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-black to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-widest rounded border border-primary/30">Hub 03</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-display font-bold">Wakiso</h3>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">edit_location</span>
+</button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8 pt-4 border-t border-accent-brown/10">
+<span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Service Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-xs font-bold text-primary">ACTIVE</span>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+<div class="h-32 bg-accent-brown/10 relative overflow-hidden">
+<img alt="Gulu Map" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-black to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] uppercase font-bold tracking-widest rounded border border-primary/30">North</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-display font-bold">Gulu</h3>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">edit_location</span>
+</button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8 pt-4 border-t border-accent-brown/10">
+<span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Service Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-xs font-bold text-slate-500">INACTIVE</span>
+</label>
+</div>
+</div>
+</div>
+<button class="bg-deep-black border-2 border-dashed border-accent-brown/30 rounded-xl flex flex-col items-center justify-center p-6 min-h-[300px] hover:border-primary/50 hover:bg-primary/5 transition-all group">
+<div class="size-16 rounded-full bg-accent-brown/20 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-background-dark transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<p class="font-bold text-slate-400 group-hover:text-primary">Add New Area</p>
+</button>
+</div>
+</div>
+<footer class="mt-auto border-t border-accent-brown/20 py-8 bg-deep-black">
+<div class="max-w-7xl mx-auto px-10 text-center">
+<p class="text-slate-500 text-[10px] uppercase tracking-[0.4em] font-medium">
+                    2026 MWIZA SERVICES | PLATINUM LOCATION MANAGEMENT
+                </p>
+</div>
+</footer>
+</main>
+
+</body></html>

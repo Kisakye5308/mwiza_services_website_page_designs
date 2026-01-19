@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services Luxury Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "rich-brown": "#3d2b1f",
+                        "charcoal": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .overlay {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (max-width: 640px) {
+            .masonry-grid { column-count: 1; }
+        }
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white transition-colors duration-300">
+<!-- Navigation -->
+<div class="w-full flex justify-center border-b border-white/10 sticky top-0 bg-background-dark/90 backdrop-blur-md z-50">
+<div class="max-w-[1280px] w-full px-6 lg:px-10">
+<header class="flex items-center justify-between py-5">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-extrabold tracking-tight">MWIZA<span class="text-primary">.</span></h2>
+</div>
+<div class="hidden md:flex flex-1 justify-center gap-10">
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-colors" href="#">Home</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-colors" href="#">About</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary" href="#">Gallery</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-colors" href="#">Services</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-5">
+<button class="flex min-w-[120px] items-center justify-center rounded-lg h-10 px-6 bg-primary text-black text-sm font-bold transition-transform hover:scale-105 active:scale-95">
+                        Book Now
+                    </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/30" data-alt="Close up portrait of a professional African concierge" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa83jtvL2aU2xggkiyNcHeO1U5G6k6QrgPY_di7nkJNj8YisAWpQ9oJGoM0uxlXNpXYt0b5qsHmhnRyPiVUiVZ8dnIxUThIugyTXTWqRxkwq1MvcQIq9BiQmzf5RCpXKYmjQF0A_YKdZ2CpLl5uije5qoOWazW8tzE8fcFjWdxROdqORIXjpTi3wx_Gg5Uco80eSXKn5hTSfXQrJ_JlT_S7RnbKwsoffLNSVdf6a3sM176Nc1sd7kMQRD57rtxlX_ama1utIErAuCj");'></div>
+</div>
+</header>
+</div>
+</div>
+<main class="max-w-[1280px] mx-auto px-6 lg:px-10 py-12">
+<!-- Headline -->
+<div class="flex flex-col items-center text-center mb-12">
+<h1 class="font-serif text-white tracking-tight text-5xl md:text-6xl font-bold leading-tight pb-4">Our Event Portfolio</h1>
+<div class="h-1.5 w-32 bg-primary rounded-full"></div>
+<p class="mt-6 text-white/50 max-w-xl text-lg font-light leading-relaxed">
+                Experience the pinnacle of hospitality and design. Every detail curated for the most prestigious events in Uganda.
+            </p>
+</div>
+<!-- Filters -->
+<div class="flex justify-center gap-3 p-3 flex-wrap mb-10">
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-black text-sm font-bold transition-all border border-primary">
+                All Collections
+            </button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-black border border-primary/40 px-6 text-white text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                Ushers
+            </button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-black border border-primary/40 px-6 text-white text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                Cocktails
+            </button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-black border border-primary/40 px-6 text-white text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                Juices
+            </button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-black border border-primary/40 px-6 text-white text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                Decor
+            </button>
+</div>
+<!-- Masonry Gallery -->
+<div class="masonry-grid">
+<!-- Item 1: Ushers -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant African ushers standing in formal uniform at a luxury gala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnnbipeh3xvcZoC_dGdwpvpLfaND5RmplYprctoOx_PWpmh4ZSpYFox9g9cJXT-60KE_VxFh5XLAey2USNgr5v26dOxLTBGcIBEbaI8m88ITRbE6AjsgIDS0D2Vnhe40CQ0yQi_OEoi8D3YreTcE4VpUGFXRXS2kSSk0EC_kCnYgfW2x3ZXKQW85z6p3d3W8lgzMlNb9hCCkHRmV3awnyG8A8EYFWqeF2mHQJpZ33BAscYQlNYTugbagXgMyu6wikUoyUe-h7VrHrp"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Service Excellence</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">Luxury Ushering</h3>
+<p class="text-primary/80 text-sm">Professional hospitality for the presidential summit reception.</p>
+</div>
+</div>
+<!-- Item 2: Juices -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Artisanal tropical fruit juices in crystal dispensers with fresh garnishes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZUYGuIxVxcHVWQmCP7iXEPNaLnW8V5O12OcduOqcumilJ5uZqytymLUfAq8vIKHPdDCDIm4YygrkcA4KFYMZygyU2vy072wLD4ZZa8LDNyqpj4GNyt6NEixwmOWGZA3k0DAm9F5aje9WM9bNyYg0iZnVEU9Bd4HIkfA98Pd5ZT7hHyOG7gIbKB5Q8QeBOTSyIsVS-olPV__LNVJJZMSWLZbLE7xsWG_LhR8Qii1PAh71DJz0icr_0dnn2T4K9ne6kTL-R4D-sQOJ9"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Refreshments</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">Tropical Infusions</h3>
+<p class="text-primary/80 text-sm">Signature cold-pressed organic juice station.</p>
+</div>
+</div>
+<!-- Item 3: Cocktails -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional mixologist preparing premium cocktails at a dark wood bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbRnIZesNT8DrgDyGYXL0-rGK6wrrtbbvGgZFJSoMnTuXoJBIsAw6sw9Vc5ES_NFPDdKBfVCSBEXDY44TOfqkcfe-zXdvg9IdEf8qZeoYvj1BPlq8Z-u9uPaYNriGSnTXqwxIv_C53AGbw41E-el_EYwBnUsjFbF_ME_UEu2vogDW3KhYvqt2g6mwsdd_xyWin5-NmdpaFdfn08z9cT5JngE8YZiV3rvIL2Bu0BXg-MRPt2CUqxoIcztn0XMa-c3_Yzw5zjOBFKwUa"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Mixology</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">Signature Bar</h3>
+<p class="text-primary/80 text-sm">Bespoke cocktail menu crafted by master mixologists.</p>
+</div>
+</div>
+<!-- Item 4: Decor -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Extravagant gold and black wedding table setup with tropical flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-KRg5aS9yQ_BBtmmbeWiOfY6l03f9WPc5sS2UN3o_QAZ-0EXGlEDpaxBNrGBaxwK114oussGWIekFJvjmJHcvYfHl1HSTDLcXZKxSalr6WCW0TyaeiC0BXk_mrL6xazwp9aNOK41Z5Xb7vIEZYKry0mLzAHw1eEaF7JEMRCTdoGrkYuP7F8MRxHSBKE4n8-ZQMM_k3cGBs8b3_MmgkILcEffKz60KP_G2_cwPP_LrP6Hgs9iTyEI6eJcSSs3PQ3S97kHLNJe6Ctss"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Design</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">Grand Ballroom</h3>
+<p class="text-primary/80 text-sm">Bespoke decor concept for a high-profile corporate gala.</p>
+</div>
+</div>
+<!-- Item 5: Ushers -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a professional concierge in a black suit with a gold name tag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfmeK_oANeTAsHDrkxBEY1opBtQWretT00a7jTpD5NXsK7SXGt6kRIZ7RIcSASH-DGZg3ROM88FDOTE432Yf1AWpSush--oszyxI7o-DPLuHjSSMunGwkSXmDrc18y1201S0XlPryqdmRVNmUECGJIH3sLjRbAXxjYRugvBeQJoK8Td0-GYXMvG_oDP2xRkKQwFQDc9gOAjquxs-QgVGJwvN3-js37nDa5vf5HFJFlmyQQyCXbrhTfKMdPEcirPKo6M9Mx1NzlTW4_"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Staffing</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">VIP Concierge</h3>
+<p class="text-primary/80 text-sm">Dedicated guest relations for executive events.</p>
+</div>
+</div>
+<!-- Item 6: Decor -->
+<div class="gallery-item relative mb-6 break-inside-avoid overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Outdoor garden party at sunset with string lights and elegant furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCURpeLiGy8sKIiNmzh4-uVo1m0ePHUkxT_XlSBKF0I25udQyafdHFH7_dXLSHsgUSNE2tKXHuOmXEqMnGrobg8hA6UHDVuAm3xFNp1V9DFZr84wqDplGSLV9i3ogAytxQv8FF5uSOMnCGnj96raw5g9nAcCgxFP0K3vClpCoYdvXfnIHfCZUiHzvppPzSHT8U_PKCClID-1bGC7ytVZh63DHnpu_jkjsM9u0A29-Vqvk1MFP6e0hjMaT5ihThdLMQJA8WGSu3Q3Lha"/>
+<div class="overlay absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 translate-y-4">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Ambience</span>
+<h3 class="text-white text-2xl font-serif font-bold mb-2">Garden Soiree</h3>
+<p class="text-primary/80 text-sm">Illuminated evening setup for luxury private celebrations.</p>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="flex px-4 py-16 justify-center">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-primary text-black text-base font-extrabold tracking-wider uppercase transition-all hover:bg-white hover:shadow-[0_0_30px_rgba(242,223,13,0.3)] group">
+<span class="truncate">Discover More</span>
+<span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-charcoal border-t border-white/5 py-12 mt-12">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<p class="text-white/60 text-sm font-medium tracking-wide">
+                    Luxury Redefined by <span class="text-primary font-bold">MWIZA SERVICES</span>
+</p>
+</div>
+<div class="flex gap-8 items-center">
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+<div class="flex flex-col items-center md:items-end">
+<span class="text-primary text-xl font-extrabold font-serif">2026</span>
+<p class="text-white/30 text-[10px] uppercase tracking-[0.2em] mt-1">Uganda's Premier Event Partner</p>
+</div>
+</div>
+</footer>
+</body></html>

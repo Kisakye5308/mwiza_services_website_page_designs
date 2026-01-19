@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services | Service Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121210",
+                        "surface-dark": "#1e1d0f",
+                        "card-dark": "#2a2814",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-glow:focus {
+            box-shadow: 0 0 10px rgba(242, 223, 13, 0.4);
+            border-color: #f2df0d !important;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121210;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #494622;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f2df0d;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-surface-dark border-r border-[#343218] flex flex-col h-screen sticky top-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">diamond</span>
+</div>
+<div>
+<h1 class="text-white text-lg font-bold leading-tight">Mwiza Admin</h1>
+<p class="text-[#cbc690] text-xs font-medium uppercase tracking-wider">Premium Services</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#cbc690] hover:bg-[#494622] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-background-dark font-bold shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm">Service Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#cbc690] hover:bg-[#494622] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-semibold">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#cbc690] hover:bg-[#494622] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-semibold">Clients</span>
+</a>
+<div class="pt-4 pb-2 px-4 text-[10px] font-bold text-[#686331] uppercase tracking-[0.2em]">Management</div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#cbc690] hover:bg-[#494622] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#343218] space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#cbc690] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-sm font-semibold">Help Center</span>
+</a>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-400/10 transition-all">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#121210]">
+<!-- Page Header -->
+<header class="flex flex-wrap items-center justify-between gap-4 p-8 border-b border-[#343218]">
+<div class="min-w-[300px]">
+<h2 class="text-white text-4xl font-black tracking-tight">Service Catalog</h2>
+<p class="text-[#cbc690] text-base mt-1">Manage your professional event service offerings for high-end clients.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-background-dark hover:brightness-110 active:scale-95 transition-all px-6 py-3 rounded-xl font-bold text-sm shadow-xl shadow-primary/10">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Add New Service</span>
+</button>
+</header>
+<!-- Catalog List Container -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Service Table (Catalog List) -->
+<div class="bg-surface-dark border border-[#343218] rounded-2xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#232110] border-b border-[#343218]">
+<th class="px-6 py-4 text-xs font-bold text-[#cbc690] uppercase tracking-widest">Service Details</th>
+<th class="px-6 py-4 text-xs font-bold text-[#cbc690] uppercase tracking-widest">Category</th>
+<th class="px-6 py-4 text-xs font-bold text-[#cbc690] uppercase tracking-widest">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-[#cbc690] uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#343218]">
+<!-- Row 1 -->
+<tr class="group hover:bg-[#232110] transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-center bg-cover bg-no-repeat border border-[#494622]" data-alt="Uniformed professional ushers standing at a corporate event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvwYGanVruUigUZGWvkoMeuVXzSN0UprR9qtg9BBWfCQEY8N3T9jBNRvw1XoRURug4w0_vEhTa8W2V_lFENg6eU-Uk98_OvyHAddHbJ6OokOjHgN8DLS3jgQ3lekTo0zo-e8bHF_nY5J5CUYEjF25QSL7mNkJLicPuX20WBZja_Jxnr0_dpjeu8PtDXd624gI4Y4nRmSFFOeQnRAn5nYpyZw-ztAN_sg2tQwKfmDrJ00z9k_Dmxrne3Tr4ZgEU7SQew6sLTk_8QkSG");'></div>
+<div>
+<p class="text-white font-bold text-lg">Elite Event Ushers</p>
+<p class="text-[#cbc690] text-sm line-clamp-1 max-w-xs">Professional multilingual staff for corporate and diplomatic events.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-[#494622] text-[#cbc690] text-xs font-bold rounded-full">STAFFING</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-green-500 text-sm font-bold">Active</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right">
+<button class="text-[#cbc690] hover:text-primary transition-colors font-bold text-sm">Edit Details</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-[#232110] transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-center bg-cover bg-no-repeat border border-[#494622]" data-alt="Luxury cocktail bar setup with premium glassware" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6rvGVPh_qupJ42qj-RJflSNBSAxmHrd-Kfa78sLWoaD2oiKS-mi3-x1KdGpyjAM0a83orDfL0lGYIlYHrxLyyww3mWImwTj4AS7FoE5sVD3Ij-IowLgCJqkK8aFsAWFpIzdE89YE9yk_4FvI8kx17qlUPRDxGVCTkv0rlJoTxagmILhxIJ6b1tJNID2aH3vs-sE7aGCC60YWY4VpREKhSt0vsqby5xQgFpjLCWQsRKZN6bzitkkt8IIR9GwHCMVtSsS2x1j1eXJ2H");'></div>
+<div>
+<p class="text-white font-bold text-lg">Mixology &amp; Bar Craft</p>
+<p class="text-[#cbc690] text-sm line-clamp-1 max-w-xs">Bespoke cocktail experiences with world-class mixologists.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-[#494622] text-[#cbc690] text-xs font-bold rounded-full">CATERING</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-green-500 text-sm font-bold">Active</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right">
+<button class="text-[#cbc690] hover:text-primary transition-colors font-bold text-sm">Edit Details</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-[#232110] transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-center bg-cover bg-no-repeat border border-[#494622]" data-alt="High-end stage floral arrangements with spotlighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClgayb0qw-XbwwthprWUZw3mPpIC-YpNGcGd1fCK7D0qPZuhpESZ9T3n8zAHWrjdqPB-RPyVe9dB6RrLzGNV5XlhXiQ2CxZ38o65I4nya0DvkbhR_z90s4_Nnr0ltMEARWp6przTFwWqKvnpRAWxttQcx6dX8JQ5SPoiEYpqNU-xQK1XqlQsZU-z3MlAwB9ofOoCffqYxAjjNwNBBhOJgwqjpOQuLdgKysvaw9s3C1rqtYpqrta6AwJVla0l_Q4yjZBKH2s_aRccmB");'></div>
+<div>
+<p class="text-white font-bold text-lg">Floral Scenic Design</p>
+<p class="text-[#cbc690] text-sm line-clamp-1 max-w-xs">Premium stage and table floral decor for weddings and galas.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-[#494622] text-[#cbc690] text-xs font-bold rounded-full">DESIGN</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-slate-500"></div>
+<span class="text-slate-500 text-sm font-bold">Inactive</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right">
+<button class="text-[#cbc690] hover:text-primary transition-colors font-bold text-sm">Edit Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Edit Side Panel (Simulated UI) -->
+<div class="bg-surface-dark border border-primary/30 rounded-2xl shadow-2xl shadow-primary/5 p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-2xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                                Edit Service Details
+                            </h3>
+<p class="text-[#cbc690] text-sm">Update the information for "Elite Event Ushers"</p>
+</div>
+<button class="text-[#686331] hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Left Column -->
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-white uppercase tracking-wider">Service Name</label>
+<input class="w-full h-14 bg-[#343218] border border-[#686331] rounded-xl px-4 text-white focus:outline-none focus:ring-1 focus:ring-primary custom-glow transition-all" type="text" value="Elite Event Ushers"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-white uppercase tracking-wider">Category</label>
+<select class="w-full h-14 bg-[#343218] border border-[#686331] rounded-xl px-4 text-white focus:outline-none focus:ring-1 focus:ring-primary custom-glow transition-all">
+<option>Staffing</option>
+<option>Catering</option>
+<option>Design</option>
+<option>Security</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-white uppercase tracking-wider">Service Status</label>
+<div class="flex items-center gap-4 mt-2">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-[#494622] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium text-[#cbc690]">Active on Website</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-white uppercase tracking-wider">Description</label>
+<textarea class="w-full bg-[#343218] border border-[#686331] rounded-xl p-4 text-white focus:outline-none focus:ring-1 focus:ring-primary custom-glow transition-all" rows="5">Our premium ushers are trained in high-level etiquette, multi-language support, and crowd management to ensure your elite guests receive the finest Ugandan hospitality.</textarea>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-white uppercase tracking-wider">Upload Media</label>
+<div class="border-2 border-dashed border-[#494622] rounded-xl p-6 flex flex-col items-center justify-center gap-2 hover:border-primary transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-[#686331] group-hover:text-primary transition-colors">cloud_upload</span>
+<p class="text-[#cbc690] text-xs text-center">Drag and drop or <span class="text-primary font-bold">browse</span> professional photos</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 flex justify-end gap-4 pt-4 border-t border-[#343218]">
+<button class="px-8 py-3 rounded-xl border border-[#494622] text-white font-bold hover:bg-[#494622] transition-all" type="button">Cancel</button>
+<button class="px-8 py-3 rounded-xl bg-primary text-background-dark font-bold hover:brightness-110 shadow-lg shadow-primary/10 transition-all" type="button">Save Changes</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="p-8 border-t border-[#343218] flex justify-between items-center text-[#686331]">
+<p class="text-sm">© 2026 <span class="text-[#cbc690] font-bold">Mwiza Services</span>. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors" href="#">Support</a>
+<span class="text-[10px] bg-[#232110] px-2 py-1 rounded">v2.4.0</span>
+</div>
+</footer>
+</main>
+</body></html>

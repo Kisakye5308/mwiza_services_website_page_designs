@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services - Booking Details #ORD-1024</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "card-dark": "#1e1e1e",
+                        "accent-brown": "#494622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Newsreader', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="border-b border-accent-brown/30 bg-background-light dark:bg-background-dark px-6 lg:px-20 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">diamond</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight font-display">Mwiza Services</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary" href="#">Bookings</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Clients</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-accent-brown/10 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary w-64" placeholder="Search bookings..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-accent-brown/10 hover:bg-accent-brown/20 transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border border-accent-brown/30" data-alt="Profile picture of the admin user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEKgLxX7HhyksCb0Q38hTCg-jLsaj2etbjr1aC5A55QaR7azYuUdO1kmusWTGuaoukixpFyyyuHzPr17cCqe8fF1759mkjTkSeTxbdXZ5qLW2VuKrsSWy2Riz9ZH6t9FNXW4d4xteDSOJcIjXTMVVye-m8AErH3wdrNT3FKDt5SJM5Yo9x1NI-jhhs5NCthY5EzFAuIqYc8_IF4RFE16iCvoyYTFPy-pEHmHeXvckugip6CAjaFkeeZLejh92-i8kSyjkfZYSb8z1u');">
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-6 lg:px-20 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-slate-500 hover:text-primary" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-xs text-slate-500">chevron_right</span>
+<a class="text-slate-500 hover:text-primary" href="#">Bookings</a>
+<span class="material-symbols-outlined text-xs text-slate-500">chevron_right</span>
+<span class="text-primary font-medium">#ORD-1024</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h1 class="text-4xl md:text-5xl font-black mb-2 tracking-tight">Booking Details: #ORD-1024</h1>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary text-background-dark text-xs font-bold uppercase tracking-widest rounded">Pending Approval</span>
+<span class="text-slate-500 text-sm">Submitted on Oct 24, 2025</span>
+</div>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-accent-brown text-white rounded-lg font-bold text-sm hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                Download Invoice
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Client & Event Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-card-dark border border-accent-brown/20 p-6 rounded-xl">
+<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Client</p>
+<p class="text-xl font-bold">Namono Alice</p>
+</div>
+<div class="bg-card-dark border border-accent-brown/20 p-6 rounded-xl">
+<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Event Type</p>
+<p class="text-xl font-bold">Traditional Wedding</p>
+</div>
+<div class="bg-card-dark border border-accent-brown/20 p-6 rounded-xl">
+<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Location</p>
+<p class="text-xl font-bold">Kampala Serena</p>
+</div>
+</div>
+<!-- Detailed Information Sections -->
+<section class="bg-card-dark border border-accent-brown/20 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-accent-brown/10">
+<h2 class="text-2xl font-bold">Client Information</h2>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Full Name</label>
+<p class="text-lg">Namono Alice Kigozi</p>
+</div>
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Phone Number</label>
+<p class="text-lg">+256 701 234 567</p>
+</div>
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Email Address</label>
+<p class="text-lg">alice.k@example.ug</p>
+</div>
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Preferred Contact</label>
+<p class="text-lg">WhatsApp / Phone Call</p>
+</div>
+</div>
+</section>
+<section class="bg-card-dark border border-accent-brown/20 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-accent-brown/10">
+<h2 class="text-2xl font-bold">Event Details</h2>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Date &amp; Time</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+<p class="text-lg">December 12, 2025</p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<p class="text-lg">02:00 PM - 11:00 PM</p>
+</div>
+</div>
+<div>
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-1">Venue / Location</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<p class="text-lg leading-snug">Kampala Serena Hotel, Victoria Ballroom</p>
+</div>
+</div>
+<div class="md:col-span-2">
+<label class="text-xs uppercase tracking-widest text-slate-500 block mb-2">Map Preview</label>
+<div class="w-full h-48 bg-accent-brown/10 rounded-lg overflow-hidden relative">
+<img alt="Map location" class="w-full h-full object-cover opacity-50 grayscale contrast-125" data-location="Kampala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVKUZkFiA4D0-90YTHvEwCQ_If9o228YormlgnQeNSMiMPPs9cLPTibq5U2cwdOI-OiEsaAz-EVBWtmVpLbeG2W27HiVT9B3bmJnsipVc-RM2ckUNpdro-dA0dUeoa10UOOLr3IMr7_HHAWyp0wKBS6trL6ts6ISzmqdS--Cojn-xS5ulqiJsyZ-hzSz4OnNYpuhGtai63RRDUszuX8XWyMl44XlgRhlzWN3tTlzRUj5QR6v7XLViNJ8nByh_8vEfv0bDeA9fodlc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-background-dark">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-card-dark border border-accent-brown/20 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-accent-brown/10">
+<h2 class="text-2xl font-bold">Services Requested</h2>
+</div>
+<div class="divide-y divide-accent-brown/10">
+<div class="p-6 flex flex-col sm:flex-row justify-between gap-4">
+<div class="flex gap-4">
+<div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Professional Ushers</h4>
+<p class="text-slate-400 text-sm leading-relaxed">10 Elite ushers dressed in ceremonial gold-themed attire to manage guest seating and coordination.</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold">UGX 1,500,000</p>
+</div>
+</div>
+<div class="p-6 flex flex-col sm:flex-row justify-between gap-4">
+<div class="flex gap-4">
+<div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">local_bar</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Signature Cocktail Bar</h4>
+<p class="text-slate-400 text-sm leading-relaxed">Full mobile bar setup with 3 professional mixologists, serving 5 custom Ugandan-themed cocktails.</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold">UGX 3,200,000</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-accent-brown/5 border-t border-accent-brown/10 flex justify-between items-center">
+<span class="text-sm font-medium text-slate-400 uppercase tracking-widest">Total Estimate</span>
+<span class="text-2xl font-black text-primary">UGX 4,700,000</span>
+</div>
+</section>
+<section class="bg-accent-brown/10 border border-primary/20 rounded-xl p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary">note_alt</span>
+<h2 class="text-lg font-bold">Special Requests / Notes</h2>
+</div>
+<p class="text-slate-300 italic">"The client specifically requested ushers to be fluent in Luganda and English. They would also prefer gold accents on the uniforms to match the ballroom decor. Please ensure the cocktails include a non-alcoholic hibiscus mocktail option."</p>
+</section>
+</div>
+<!-- Right Column: Sidebar Actions -->
+<div class="space-y-6">
+<div class="sticky top-8">
+<div class="bg-card-dark border border-accent-brown/20 rounded-xl p-6 shadow-2xl">
+<h3 class="text-xl font-bold mb-6 border-b border-accent-brown/10 pb-4">Admin Actions</h3>
+<div class="flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-background-dark rounded-lg font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                                Approve Booking
+                            </button>
+<button class="w-full py-4 border-2 border-accent-brown text-white rounded-lg font-bold text-lg hover:bg-accent-brown/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">cancel</span>
+                                Reject Booking
+                            </button>
+<div class="pt-4 mt-2 border-t border-accent-brown/10">
+<p class="text-xs uppercase tracking-widest text-slate-500 mb-4">Communication</p>
+<div class="flex flex-col gap-3">
+<button class="w-full py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-green-500">chat</span>
+                                        Contact via WhatsApp
+                                    </button>
+<button class="w-full py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-blue-400">mail</span>
+                                        Send Email
+                                    </button>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-background-dark rounded-lg border border-accent-brown/10">
+<p class="text-xs text-slate-500 leading-relaxed">
+<span class="material-symbols-outlined text-[10px] inline-block align-middle mr-1">info</span>
+                                Approving this booking will automatically notify the client and generate a formal service contract for signing.
+                            </p>
+</div>
+</div>
+<div class="mt-6 bg-accent-brown/10 p-6 rounded-xl border border-accent-brown/20">
+<h4 class="font-bold text-sm mb-4">Internal Log</h4>
+<div class="space-y-4">
+<div class="flex gap-3 text-xs">
+<div class="w-1 bg-primary rounded-full"></div>
+<div>
+<p class="text-slate-300">Booking received from website</p>
+<p class="text-slate-500">Oct 24, 10:15 AM</p>
+</div>
+</div>
+<div class="flex gap-3 text-xs">
+<div class="w-1 bg-slate-600 rounded-full"></div>
+<div>
+<p class="text-slate-300">Automated availability check passed</p>
+<p class="text-slate-500">Oct 24, 10:16 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-accent-brown/20 py-8 bg-background-dark">
+<div class="max-w-[1200px] mx-auto px-6 text-center">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-[0.2em]">
+                © 2026 Mwiza Services | Premium Event Management
+            </p>
+</div>
+</footer>
+</body></html>

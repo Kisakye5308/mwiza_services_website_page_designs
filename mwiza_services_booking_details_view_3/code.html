@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services - Testimonials Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "card-dark": "#1a1a1a",
+                        "deep-black": "#0a0a0a",
+                        "accent-brown": "#494622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Newsreader', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-item-active {
+            @apply border-l-4 border-primary bg-accent-brown/20 text-primary;
+        }
+        .star-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen flex">
+<aside class="w-64 border-r border-accent-brown/30 bg-deep-black flex flex-col h-screen sticky top-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-10">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-background-dark shrink-0">
+<span class="material-symbols-outlined font-bold text-xl">diamond</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight font-display">Mwiza Admin</h2>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium font-sans">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium font-sans">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 sidebar-item-active" href="#">
+<span class="material-symbols-outlined">reviews</span>
+<span class="text-sm font-medium font-sans">Testimonials</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-sm font-medium font-sans">Locations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium font-sans">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="text-sm font-medium font-sans">Services</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-accent-brown/10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center border border-accent-brown/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_Mi6_-BytHFKWQqJX7BWaSUkTdJZNq30S-sMyegEExkN7qTCpgAziqlErMRISiWoi7ZEKdstFXM8f_jQ8fNSKmiPMnI2x5SzVih7BGFCQriCTGxoDGn2g5Eb-ZewVQUGQ2yAAln5EBMTI0WYs_XD_Rp10IW90FTVsy2JQ44U_LndeN7tWU5IVN5xT6jYc2KheS0_W8FPN44s7OqhTRDuTKOKYOEwRTuDyqK8BJ28jhIq30QGn3Ts9kGsksZqqQu0fcUcy6iwGA3sf');"></div>
+<div>
+<p class="text-xs font-bold font-sans">Admin User</p>
+<p class="text-[10px] text-slate-500 font-sans">System Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col">
+<header class="h-16 border-b border-accent-brown/20 flex items-center justify-between px-10 bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4 text-sm font-sans">
+<span class="text-slate-500">Admin</span>
+<span class="material-symbols-outlined text-xs text-slate-600">chevron_right</span>
+<span class="text-primary">Testimonials Management</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-primary rounded-full border border-background-dark"></span>
+</button>
+</div>
+</header>
+<div class="p-10 max-w-7xl w-full mx-auto flex-1">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h1 class="text-4xl md:text-5xl font-display font-bold tracking-tight relative inline-block">
+                    Testimonials Management
+                    <span class="absolute bottom-[-8px] left-0 w-1/3 h-1 bg-primary rounded-full"></span>
+</h1>
+<p class="mt-6 text-slate-400 max-w-xl font-sans">Review and moderate client feedback. Manage the public appearance of your premium brand through verified testimonials.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-4 bg-primary text-background-dark rounded font-bold text-sm hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/10 font-sans">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+                    Create Testimonial
+                </button>
+</div>
+</div>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span>
+<h2 class="text-lg font-display font-bold text-primary uppercase tracking-widest">Pending Approval (2)</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-deep-black border border-primary/40 rounded-xl p-6 relative overflow-hidden group shadow-2xl shadow-primary/5">
+<div class="absolute top-0 right-0 px-4 py-1 bg-primary text-background-dark text-[10px] font-bold uppercase tracking-widest rounded-bl-lg">New</div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full border border-accent-brown/30 bg-accent-brown/10 flex items-center justify-center text-primary font-display font-bold text-xl">BN</div>
+<div>
+<h3 class="font-display font-bold text-xl">Brian Namugera</h3>
+<p class="text-xs text-slate-500 font-sans uppercase tracking-wider">Royal Wedding Package</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+</div>
+</div>
+<blockquote class="text-slate-300 italic mb-8 font-display text-lg leading-relaxed">
+                        "The level of professionalism displayed by Mwiza Services at our lakeside wedding was unparalleled. From the decor to the catering, every detail whispered luxury."
+                    </blockquote>
+<div class="flex items-center justify-between pt-6 border-t border-accent-brown/20">
+<div class="flex gap-4">
+<button class="text-primary hover:underline text-xs font-bold uppercase tracking-widest">Approve</button>
+<button class="text-red-400 hover:underline text-xs font-bold uppercase tracking-widest">Reject</button>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-primary/40 rounded-xl p-6 relative overflow-hidden group shadow-2xl shadow-primary/5">
+<div class="absolute top-0 right-0 px-4 py-1 bg-primary text-background-dark text-[10px] font-bold uppercase tracking-widest rounded-bl-lg">New</div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full border border-accent-brown/30 bg-accent-brown/10 flex items-center justify-center text-primary font-display font-bold text-xl">JM</div>
+<div>
+<h3 class="font-display font-bold text-xl">Juliet Mukasa</h3>
+<p class="text-xs text-slate-500 font-sans uppercase tracking-wider">Corporate Gala</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+<span class="material-symbols-outlined star-filled text-lg">star</span>
+</div>
+</div>
+<blockquote class="text-slate-300 italic mb-8 font-display text-lg leading-relaxed">
+                        "Hosting our annual gala with Mwiza was the best decision we made this year. Impeccable timing and the floral arrangements were breathtaking."
+                    </blockquote>
+<div class="flex items-center justify-between pt-6 border-t border-accent-brown/20">
+<div class="flex gap-4">
+<button class="text-primary hover:underline text-xs font-bold uppercase tracking-widest">Approve</button>
+<button class="text-red-400 hover:underline text-xs font-bold uppercase tracking-widest">Reject</button>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-lg font-display font-bold text-slate-500 uppercase tracking-widest mb-6">Published Reviews</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl p-6 hover:border-primary/40 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-display font-bold text-xl">Sanyu Catherine</h3>
+<p class="text-[10px] text-slate-500 font-sans uppercase tracking-widest">Luxury Engagement</p>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-400 font-sans text-sm line-clamp-3 mb-6">
+                        "The team exceeded all expectations. My engagement party felt like a scene from a movie. Truly Ugandan excellence."
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-accent-brown/10">
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer scale-90">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="text-[10px] font-bold text-primary uppercase">Published</span>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl p-6 hover:border-primary/40 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-display font-bold text-xl">David Okello</h3>
+<p class="text-[10px] text-slate-500 font-sans uppercase tracking-widest">VIP Executive Retreat</p>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-400 font-sans text-sm line-clamp-3 mb-6">
+                        "Smooth operations and world-class hospitality. Mwiza Services handled our executive retreat in Entebbe with absolute precision."
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-accent-brown/10">
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer scale-90">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="text-[10px] font-bold text-primary uppercase">Published</span>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+</div>
+<div class="bg-deep-black border border-accent-brown/30 rounded-xl p-6 hover:border-primary/40 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-display font-bold text-xl">Amina Nakato</h3>
+<p class="text-[10px] text-slate-500 font-sans uppercase tracking-widest">Private Villa Event</p>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-400 font-sans text-sm line-clamp-3 mb-6">
+                        "Great experience overall. The lighting was spectacular, though we had some delays with the sound setup initially. Fixed quickly."
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-accent-brown/10">
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer scale-90">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-accent-brown/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="text-[10px] font-bold text-slate-600 uppercase">Hidden</span>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-auto border-t border-accent-brown/20 py-8 bg-deep-black">
+<div class="max-w-7xl mx-auto px-10 text-center">
+<p class="text-slate-500 text-[10px] uppercase tracking-[0.4em] font-medium font-sans">
+                2026 MWIZA SERVICES | PRESTIGE BRAND MANAGEMENT
+            </p>
+</div>
+</footer>
+</main>
+
+</body></html>

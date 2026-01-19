@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mwiza Services Admin Dashboard Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2df0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121210",
+                        "surface-dark": "#1e1d0f",
+                        "accent-brown": "#494622",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: "Noto Sans", sans-serif;
+        }
+        h1, h2, h3, .font-display {
+            font-family: "Noto Serif", serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-[#0a0a05] border-r border-slate-200 dark:border-accent-brown flex flex-col justify-between py-6">
+<div class="flex flex-col gap-8 px-6">
+<!-- Brand Identity -->
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-full flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">diamond</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight dark:text-white">Mwiza Services</h1>
+<p class="text-slate-500 dark:text-primary/70 text-xs font-medium uppercase tracking-widest">Admin Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-background-dark font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-accent-brown transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-accent-brown transition-colors" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="text-sm">Gallery</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-accent-brown transition-colors" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="text-sm">Services</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-accent-brown transition-colors" href="#">
+<span class="material-symbols-outlined">reviews</span>
+<span class="text-sm">Testimonials</span>
+</a>
+</nav>
+</div>
+<div class="px-6 flex flex-col gap-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark py-3 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/10">
+                    View Website
+                </button>
+<div class="flex flex-col gap-1 border-t border-slate-200 dark:border-accent-brown pt-4">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-red-400" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-sm">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Top Header -->
+<header class="flex flex-wrap justify-between items-center gap-4 p-8 border-b border-slate-200 dark:border-accent-brown bg-white/50 dark:bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-10">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-display font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                        Welcome back, <span class="text-primary italic">Mwiza</span>
+</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Managing luxury events across Uganda since 2018.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-200 dark:border-accent-brown text-slate-600 dark:text-white text-sm font-semibold hover:bg-slate-50 dark:hover:bg-accent-brown/30 transition-all">
+<span class="material-symbols-outlined text-xl">download</span>
+                        Download Report
+                    </button>
+<div class="size-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Admin profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfxJnwKwjaF17iJgpkiD64gV7EexDf752O3XaSFOkE5_bcMUldXvvkgnivZuOEWpq3wzhSmObTi3eaGvmSmIftZT4Vhr_I7LrD9wBgWbT7bcDtONmhTSc4v2s7nPGK6X9oqNBNCE6LIoZOdClt9jrR-nftZTsk0kruD0LEt_3KdaBwJ4rGWtvIBzaiP2A68C-dng3ny1e5JHAx1CH9EsLKpMT8Se7raYnQ6vjtTWOhcwqxgNlTHZPXXO3h2-Jcv9dkxcDRdIH7HYEH"/>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-surface-dark border-l-4 border-primary shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Bookings</p>
+<span class="material-symbols-outlined text-primary">book_online</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-display font-bold">1,284</p>
+<p class="text-green-500 text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12.5%
+                        </p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-accent-brown shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Requests</p>
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-display font-bold">12</p>
+<p class="text-primary text-sm font-bold">Awaiting review</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-accent-brown shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Services</p>
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-display font-bold">48</p>
+<p class="text-slate-400 text-sm">Across 5 categories</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-accent-brown shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Recent Revenue</p>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-display font-bold">UGX 4.2M</p>
+<p class="text-green-500 text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +18.2%
+                        </p>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Recent Bookings Table -->
+<div class="xl:col-span-2 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-bold dark:text-white">Recent Bookings</h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All Bookings</button>
+</div>
+<div class="overflow-hidden rounded-xl border border-slate-200 dark:border-accent-brown bg-white dark:bg-surface-dark">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-accent-brown/20 border-b border-slate-200 dark:border-accent-brown">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-300">Client Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-300">Event Type</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-300">Date</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-300">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-accent-brown/30">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-accent-brown/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white">Kato Wilson</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300 font-display italic">Traditional Wedding</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300">Oct 12, 2026</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-primary border border-primary/30">
+                                                    Pending
+                                                </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-accent-brown/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white">Sarah Namuli</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300 font-display italic">Corporate Gala</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300">Oct 15, 2026</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center rounded-full bg-green-500/20 px-3 py-1 text-xs font-bold text-green-500 border border-green-500/30">
+                                                    Confirmed
+                                                </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-accent-brown/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white">John Okello</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300 font-display italic">Private Dinner</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300">Oct 18, 2026</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-primary border border-primary/30">
+                                                    Pending
+                                                </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-accent-brown/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white">Grace Akello</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300 font-display italic">Birthday Celebration</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-300">Oct 20, 2026</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center rounded-full bg-green-500/20 px-3 py-1 text-xs font-bold text-green-500 border border-green-500/30">
+                                                    Confirmed
+                                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Quick Actions Sidebar Panel -->
+<div class="space-y-4">
+<h3 class="text-2xl font-bold dark:text-white">Quick Actions</h3>
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-accent-brown rounded-xl p-6 flex flex-col gap-4">
+<button class="flex items-center gap-4 w-full p-4 rounded-lg bg-primary text-background-dark font-bold hover:scale-[1.02] transition-all text-left">
+<div class="bg-background-dark/10 p-2 rounded-md">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base">Add New Event</span>
+<span class="text-xs opacity-70 font-normal">Create a manual booking entry</span>
+</div>
+</button>
+<button class="flex items-center gap-4 w-full p-4 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all text-left group">
+<div class="bg-primary/10 p-2 rounded-md group-hover:bg-primary/20">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base">Upload to Gallery</span>
+<span class="text-xs text-slate-500 font-normal">Add photos of recent work</span>
+</div>
+</button>
+<button class="flex items-center gap-4 w-full p-4 rounded-lg border border-slate-200 dark:border-accent-brown dark:text-white hover:bg-slate-50 dark:hover:bg-accent-brown/20 transition-all text-left group">
+<div class="bg-slate-100 dark:bg-accent-brown/30 p-2 rounded-md group-hover:bg-slate-200">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base">Send Inquiry Response</span>
+<span class="text-xs text-slate-500 font-normal">Reply to waiting clients</span>
+</div>
+</button>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-accent-brown/30">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Service Maintenance</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-slate-100 dark:bg-accent-brown/30 px-3 py-1 rounded text-xs text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-accent-brown">Server: Online</span>
+<span class="bg-slate-100 dark:bg-accent-brown/30 px-3 py-1 rounded text-xs text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-accent-brown">Backup: 2h ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto p-8 border-t border-slate-200 dark:border-accent-brown">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 dark:text-slate-500 text-sm">
+                        © 2026 <span class="text-primary font-bold">Mwiza Services</span>. Premium Event Solutions Uganda.
+                    </p>
+<div class="flex gap-6">
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Support Desk</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
