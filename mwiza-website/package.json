@@ -1,0 +1,25 @@
+{
+  "name": "mwiza-services-website",
+  "version": "1.0.0",
+  "description": "Premium luxury event management website for Mwiza Services - Uganda",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch",
+    "build": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --minify",
+    "serve": "npx live-server ./src --port=3000",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": [
+    "mwiza",
+    "events",
+    "luxury",
+    "uganda",
+    "wedding",
+    "corporate"
+  ],
+  "author": "Mwiza Services",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "live-server": "^1.2.2"
+  }
+}
