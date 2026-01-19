@@ -9,348 +9,240 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/css/output.css">
+    <style>
+        .luxury-gradient {
+            background: radial-gradient(circle at center, #3d2b1f 0%, #0a0a05 100%);
+        }
+    </style>
 </head>
-<body class="bg-background-dark text-white">
+<body class="bg-background-dark text-white font-display overflow-x-hidden">
     
-    <!-- HEADER -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 nav-glass transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="size-10 text-primary transition-transform group-hover:scale-110">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-[1200px] mx-auto w-full px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="size-6 text-primary">
                         <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
                         </svg>
                     </div>
-                    <h1 class="text-xl font-bold tracking-tight uppercase">Mwiza <span class="text-primary">Services</span></h1>
+                    <span class="text-white text-xl font-extrabold tracking-tighter uppercase">Mwiza Services</span>
                 </a>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link nav-link-active">About Us</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="gallery.html" class="nav-link">Gallery</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <a href="booking.html" class="btn-primary hidden sm:flex">Book Now</a>
-                    <button id="mobile-nav-toggle" class="lg:hidden p-2 text-white hover:text-primary">
-                        <span class="material-symbols-outlined text-3xl">menu</span>
+                <div class="flex flex-1 justify-end items-center gap-8">
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="index.html" class="text-white/80 hover:text-primary text-sm font-semibold transition-colors">Home</a>
+                        <a href="about.html" class="text-primary text-sm font-semibold border-b-2 border-primary pb-1">About Us</a>
+                        <a href="services.html" class="text-white/80 hover:text-primary text-sm font-semibold transition-colors">Services</a>
+                        <a href="gallery.html" class="text-white/80 hover:text-primary text-sm font-semibold transition-colors">Gallery</a>
+                    </div>
+                    <a href="booking.html" class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform">
+                        Book Now
+                    </a>
+                    <button id="mobile-nav-toggle" class="md:hidden p-2 text-white hover:text-primary">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
                     </button>
                 </div>
-            </div>
+            </nav>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-surface-dark border-l border-accent-brown transform translate-x-full transition-transform duration-300 lg:hidden z-50">
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-background-dark border-l border-white/10 transform translate-x-full transition-transform duration-300 md:hidden z-50">
             <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between p-6 border-b border-accent-brown">
+                <div class="flex items-center justify-between p-6 border-b border-white/10">
                     <span class="text-lg font-bold">Menu</span>
                     <button id="mobile-nav-close" class="p-2 hover:text-primary">
                         <span class="material-symbols-outlined">close</span>
                     </button>
                 </div>
-                <nav class="flex-1 p-6 space-y-2">
-                    <a href="index.html" class="sidebar-link"><span class="material-symbols-outlined">home</span><span>Home</span></a>
-                    <a href="about.html" class="sidebar-link-active"><span class="material-symbols-outlined">info</span><span>About Us</span></a>
-                    <a href="services.html" class="sidebar-link"><span class="material-symbols-outlined">auto_awesome</span><span>Services</span></a>
-                    <a href="gallery.html" class="sidebar-link"><span class="material-symbols-outlined">photo_library</span><span>Gallery</span></a>
-                    <a href="contact.html" class="sidebar-link"><span class="material-symbols-outlined">mail</span><span>Contact</span></a>
+                <nav class="flex-1 p-6 space-y-4">
+                    <a href="index.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Home</a>
+                    <a href="about.html" class="block py-2 text-primary font-semibold">About Us</a>
+                    <a href="services.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Services</a>
+                    <a href="gallery.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Gallery</a>
+                    <a href="contact.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Contact</a>
                 </nav>
-                <div class="p-6 border-t border-accent-brown">
-                    <a href="booking.html" class="btn-primary w-full justify-center">Book Now</a>
+                <div class="p-6 border-t border-white/10">
+                    <a href="booking.html" class="flex w-full items-center justify-center rounded-full h-12 bg-primary text-background-dark text-sm font-black uppercase tracking-widest">Book Now</a>
                 </div>
             </div>
         </div>
-        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity lg:hidden z-40"></div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity md:hidden z-40"></div>
     </header>
 
-    <main class="pt-20">
+    <main>
         <!-- Hero Section -->
-        <section class="relative py-24 lg:py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-rich-brown/40 to-background-dark"></div>
-            <div class="absolute inset-0 premium-texture opacity-30"></div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="section-subtitle">Our Story</span>
-                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-                        Elevating <span class="text-primary italic">African Excellence</span>
+        <section class="relative w-full min-h-[85vh] flex items-end">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-10"></div>
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=1920&auto=format&fit=crop');"></div>
+            </div>
+            <div class="max-w-[1200px] mx-auto w-full px-6 pb-24 relative z-20">
+                <div class="max-w-2xl">
+                    <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Established 2018</span>
+                    <h1 class="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.1] tracking-tight mb-6">
+                        Our Story: <span class="italic font-normal text-primary">Elevating</span> Ugandan Hospitality
                     </h1>
-                    <p class="text-xl text-muted-gold leading-relaxed">
-                        Since 2018, Mwiza Services has been transforming ordinary events into extraordinary 
-                        experiences across Uganda, setting the gold standard in luxury event management.
+                    <p class="text-white/70 text-lg md:text-xl font-light leading-relaxed mb-8 max-w-xl">
+                        Crafting unforgettable moments with African excellence and an elite personal touch. We don't just host; we create legacies.
                     </p>
+                    <a href="#vision" class="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm group">
+                        Explore Our Vision 
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Our Story Section -->
-        <section class="py-20 lg:py-28">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Stats Section -->
+        <section class="bg-background-dark border-y border-white/5">
+            <div class="max-w-[1200px] mx-auto px-6 py-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col gap-1">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest">Global Clients</p>
+                        <p class="text-white text-4xl md:text-5xl font-black font-serif">150<span class="text-primary">+</span></p>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest">Luxury Events</p>
+                        <p class="text-white text-4xl md:text-5xl font-black font-serif">500<span class="text-primary">+</span></p>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest">Elite Staff</p>
+                        <p class="text-white text-4xl md:text-5xl font-black font-serif">45</p>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest">Projected Growth</p>
+                        <p class="text-primary text-4xl md:text-5xl font-black font-serif">2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Founder's Note Section -->
+        <section id="vision" class="luxury-gradient py-20 md:py-24 border-b border-white/5">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div class="space-y-8">
                         <div>
-                            <span class="section-subtitle">Who We Are</span>
-                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mt-4">
-                                A Legacy of <span class="text-primary">Excellence</span>
-                            </h2>
+                            <h2 class="text-white text-3xl md:text-4xl font-serif font-bold mb-6">The Mwiza Vision</h2>
+                            <div class="w-16 h-1 bg-primary mb-8"></div>
                         </div>
-                        <div class="space-y-6 text-muted-gold leading-relaxed">
+                        <div class="space-y-6 text-white/80 leading-relaxed font-light text-lg">
                             <p>
-                                Mwiza Services was born from a simple vision: to bring world-class event 
-                                experiences to Uganda while celebrating our rich African heritage. What started 
-                                as a small team of passionate event enthusiasts has grown into the country's 
-                                most trusted name in luxury event staffing.
+                                To redefine luxury event services across <span class="text-primary font-medium">Uganda</span> by blending traditional African warmth with world-class professional standards. We believe every gathering is a masterpiece waiting to be painted.
                             </p>
                             <p>
-                                Our name "Mwiza" means "beautiful" in Kinyarwanda, and beauty is at the heart 
-                                of everything we do. From the elegant presentation of our ushers to the artistry 
-                                of our cocktail mixologists, we believe that every detail matters.
-                            </p>
-                            <p>
-                                Today, we're proud to have served over 1,200 events, from intimate private dinners 
-                                to grand corporate galas and traditional Ugandan weddings that honor our cultural roots.
+                                Our mission is to empower African professionals to showcase the pinnacle of service, ensuring that our heritage of hospitality is recognized globally for its sophistication and precision.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-8">
-                            <div>
-                                <p class="text-4xl font-serif font-bold text-primary">7+</p>
-                                <p class="text-muted-gold text-sm">Years of Excellence</p>
-                            </div>
-                            <div>
-                                <p class="text-4xl font-serif font-bold text-primary">1,200+</p>
-                                <p class="text-muted-gold text-sm">Events Served</p>
-                            </div>
-                            <div>
-                                <p class="text-4xl font-serif font-bold text-primary">50+</p>
-                                <p class="text-muted-gold text-sm">Team Members</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="relative">
-                        <div class="aspect-[4/5] rounded-2xl overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" 
-                                 alt="Mwiza Services team at an event" 
-                                 class="w-full h-full object-cover">
+                    <div class="bg-white/5 border border-white/10 p-8 md:p-10 lg:p-14 rounded-xl relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 text-white/5 select-none pointer-events-none">
+                            <span class="material-symbols-outlined text-[180px] md:text-[200px]">format_quote</span>
                         </div>
-                        <div class="absolute -bottom-8 -left-8 bg-primary text-background-dark p-8 rounded-xl shadow-luxury max-w-xs">
-                            <p class="font-serif text-2xl font-bold mb-2">"Excellence is not an act, but a habit."</p>
-                            <p class="text-sm opacity-80">— Mwiza Founding Principle</p>
+                        <p class="text-white/50 text-xs font-bold tracking-[0.2em] uppercase mb-8">A Personal Note from Mwiza</p>
+                        <blockquote class="text-white text-xl md:text-2xl font-serif italic leading-relaxed mb-8 relative z-10">
+                            "My commitment to you is absolute. Every detail, every smile, and every moment is curated to reflect the elite status of our guests. We don't just host events; we craft legacies for generations."
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="h-[1px] w-12 bg-primary"></div>
+                            <p class="text-primary font-black uppercase tracking-widest text-sm">Mwiza N., Founder &amp; CEO</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission & Vision -->
-        <section class="py-20 bg-surface-dark">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="card p-10 space-y-6">
-                        <div class="size-16 rounded-full bg-primary/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-3xl">flag</span>
-                        </div>
-                        <h3 class="text-2xl font-serif font-bold text-white">Our Mission</h3>
-                        <p class="text-muted-gold leading-relaxed">
-                            To deliver exceptional event experiences that exceed expectations, combining 
-                            international standards with authentic African hospitality. We empower our team 
-                            to be the best in the industry while creating memorable moments for every guest.
-                        </p>
+        <!-- Meet The Team Section -->
+        <section class="bg-background-dark py-20 md:py-24">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+                    <div>
+                        <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Professionals</span>
+                        <h2 class="text-white text-4xl md:text-5xl font-serif font-bold">Meet the Elite Team</h2>
                     </div>
-                    <div class="card p-10 space-y-6">
-                        <div class="size-16 rounded-full bg-primary/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
-                        </div>
-                        <h3 class="text-2xl font-serif font-bold text-white">Our Vision</h3>
-                        <p class="text-muted-gold leading-relaxed">
-                            To be East Africa's premier event management company, recognized globally for 
-                            our commitment to excellence, innovation, and the elevation of African hospitality 
-                            standards on the world stage.
-                        </p>
-                    </div>
+                    <p class="text-white/50 max-w-sm font-light text-base">
+                        Highly trained African professionals dedicated to providing a seamless experience in their signature black and brown uniforms.
+                    </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Core Values -->
-        <section class="py-20 lg:py-28">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="section-subtitle">What Drives Us</span>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mt-4">Our Core Values</h2>
-                </div>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center space-y-4">
-                        <div class="size-20 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-4xl">diamond</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="group">
+                        <div class="relative overflow-hidden aspect-[3/4] rounded-lg mb-4">
+                            <div class="absolute inset-0 bg-accent-brown/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Akilah J. - Lead Coordinator" 
+                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
                         </div>
-                        <h3 class="text-xl font-bold text-white">Excellence</h3>
-                        <p class="text-muted-gold text-sm">We pursue perfection in every detail, from first impression to lasting memory.</p>
+                        <h3 class="text-white font-bold text-lg">Akilah J.</h3>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Lead Coordinator</p>
                     </div>
-                    <div class="text-center space-y-4">
-                        <div class="size-20 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-4xl">handshake</span>
+                    <!-- Team Member 2 -->
+                    <div class="group">
+                        <div class="relative overflow-hidden aspect-[3/4] rounded-lg mb-4">
+                            <div class="absolute inset-0 bg-accent-brown/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Seraphina K. - Concierge Manager" 
+                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
                         </div>
-                        <h3 class="text-xl font-bold text-white">Integrity</h3>
-                        <p class="text-muted-gold text-sm">We build trust through transparency, honesty, and unwavering commitment.</p>
+                        <h3 class="text-white font-bold text-lg">Seraphina K.</h3>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Concierge Manager</p>
                     </div>
-                    <div class="text-center space-y-4">
-                        <div class="size-20 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-4xl">diversity_3</span>
+                    <!-- Team Member 3 -->
+                    <div class="group">
+                        <div class="relative overflow-hidden aspect-[3/4] rounded-lg mb-4">
+                            <div class="absolute inset-0 bg-accent-brown/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Bastian M. - Hospitality Director" 
+                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
                         </div>
-                        <h3 class="text-xl font-bold text-white">Ubuntu</h3>
-                        <p class="text-muted-gold text-sm">We believe in community, treating every client and team member like family.</p>
+                        <h3 class="text-white font-bold text-lg">Bastian M.</h3>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Hospitality Director</p>
                     </div>
-                    <div class="text-center space-y-4">
-                        <div class="size-20 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-4xl">lightbulb</span>
+                    <!-- Team Member 4 -->
+                    <div class="group">
+                        <div class="relative overflow-hidden aspect-[3/4] rounded-lg mb-4">
+                            <div class="absolute inset-0 bg-accent-brown/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Elowen O. - Creative Lead" 
+                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
                         </div>
-                        <h3 class="text-xl font-bold text-white">Innovation</h3>
-                        <p class="text-muted-gold text-sm">We constantly evolve, bringing fresh ideas and creative solutions to every event.</p>
+                        <h3 class="text-white font-bold text-lg">Elowen O.</h3>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Creative Lead</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section class="py-20 bg-rich-brown/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="section-subtitle">The Faces Behind The Magic</span>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mt-4">Meet Our Leadership</h2>
-                </div>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card overflow-hidden group">
-                        <div class="aspect-[3/4] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" 
-                                 alt="CEO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-white">Sarah Namuli</h3>
-                            <p class="text-primary text-sm font-medium mb-3">Founder & CEO</p>
-                            <p class="text-muted-gold text-sm">Visionary leader with 15+ years in hospitality, passionate about elevating African service standards.</p>
-                        </div>
-                    </div>
-                    <div class="card overflow-hidden group">
-                        <div class="aspect-[3/4] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" 
-                                 alt="Operations Director" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-white">David Okello</h3>
-                            <p class="text-primary text-sm font-medium mb-3">Operations Director</p>
-                            <p class="text-muted-gold text-sm">Logistics expert ensuring seamless execution of over 200 events annually.</p>
-                        </div>
-                    </div>
-                    <div class="card overflow-hidden group">
-                        <div class="aspect-[3/4] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" 
-                                 alt="Creative Director" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-white">Grace Akello</h3>
-                            <p class="text-primary text-sm font-medium mb-3">Creative Director</p>
-                            <p class="text-muted-gold text-sm">Award-winning designer bringing artistic vision to every event concept.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 lg:py-28 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-rich-brown/40"></div>
-            <div class="absolute inset-0 premium-texture"></div>
-            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
-                    Ready to Create Something <span class="text-primary italic">Beautiful</span>?
-                </h2>
-                <p class="text-xl text-muted-gold mb-10 max-w-2xl mx-auto">
-                    Let's bring your vision to life. Our team is ready to craft an unforgettable experience for your next event.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="booking.html" class="btn-primary text-lg px-8 py-4">
-                        <span class="material-symbols-outlined mr-2">calendar_month</span>
-                        Book a Consultation
-                    </a>
-                    <a href="contact.html" class="btn-secondary text-lg px-8 py-4">
-                        <span class="material-symbols-outlined mr-2">mail</span>
-                        Get in Touch
-                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-background-dark border-t border-accent-brown/30 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                <div class="col-span-2 md:col-span-1">
-                    <a href="index.html" class="flex items-center gap-3 mb-6">
-                        <div class="size-10 text-primary">
-                            <svg fill="currentColor" viewBox="0 0 48 48"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path></svg>
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-white/5 py-12 md:py-16">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="size-5 text-primary">
+                            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                            </svg>
                         </div>
-                        <span class="text-xl font-bold">Mwiza <span class="text-primary">Services</span></span>
+                        <span class="text-white text-lg font-black uppercase tracking-tighter">Mwiza Services</span>
                     </a>
-                    <p class="text-muted-gold text-sm mb-6">Uganda's premier luxury event management company, elevating African excellence since 2018.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="size-10 rounded-full bg-accent-brown/30 flex items-center justify-center text-muted-gold hover:bg-primary hover:text-background-dark transition-colors">
-                            <span class="material-symbols-outlined text-xl">share</span>
-                        </a>
-                        <a href="#" class="size-10 rounded-full bg-accent-brown/30 flex items-center justify-center text-muted-gold hover:bg-primary hover:text-background-dark transition-colors">
-                            <span class="material-symbols-outlined text-xl">camera</span>
-                        </a>
-                        <a href="#" class="size-10 rounded-full bg-accent-brown/30 flex items-center justify-center text-muted-gold hover:bg-primary hover:text-background-dark transition-colors">
-                            <span class="material-symbols-outlined text-xl">chat</span>
-                        </a>
-                    </div>
+                    <p class="text-white/40 text-sm">Elevating Hospitality. Redefining Luxury.</p>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-muted-gold text-sm">
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
-                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
-                    </ul>
+                <div class="flex gap-8">
+                    <a href="#" class="text-primary hover:scale-110 transition-transform"><span class="material-symbols-outlined">public</span></a>
+                    <a href="#" class="text-primary hover:scale-110 transition-transform"><span class="material-symbols-outlined">alternate_email</span></a>
+                    <a href="#" class="text-primary hover:scale-110 transition-transform"><span class="material-symbols-outlined">hub</span></a>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Services</h4>
-                    <ul class="space-y-2 text-muted-gold text-sm">
-                        <li><a href="services.html#ushers" class="hover:text-primary transition-colors">Premium Ushers</a></li>
-                        <li><a href="services.html#cocktails" class="hover:text-primary transition-colors">Cocktail Services</a></li>
-                        <li><a href="services.html#juices" class="hover:text-primary transition-colors">Fresh Juices</a></li>
-                        <li><a href="services.html#decor" class="hover:text-primary transition-colors">Event Décor</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Contact</h4>
-                    <ul class="space-y-3 text-muted-gold text-sm">
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-lg">location_on</span>
-                            <span>Plot 24, Kampala Road<br>Kampala, Uganda</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-lg">phone</span>
-                            <span>+256 700 123 456</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-lg">mail</span>
-                            <span>info@mwizaservices.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-accent-brown/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-accent-brown text-sm">© 2026 Mwiza Services. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-muted-gold">
-                    <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                <div class="text-center md:text-right">
+                    <p class="text-white/50 text-sm font-medium">© 2026 Mwiza Services Ltd.</p>
+                    <p class="text-white/20 text-[10px] uppercase tracking-widest mt-1">All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -359,3 +251,4 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
+ 
