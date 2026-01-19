@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book premium event services with Mwiza Services. Professional ushers, cocktails, juices, and decor for your luxury event in Uganda.">
+    <title>Book Your Event | Mwiza Services</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/output.css">
+</head>
+<body class="bg-background-dark text-white min-h-screen">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="size-8 text-primary">
+                        <svg fill="currentColor" viewBox="0 0 48 48"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path></svg>
+                    </div>
+                    <h1 class="text-lg font-bold tracking-tight uppercase">Mwiza <span class="text-primary">Services</span></h1>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/services.html" class="nav-link">Services</a>
+                    <a href="/gallery.html" class="nav-link">Portfolio</a>
+                    <a href="/about.html" class="nav-link">About Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex flex-col lg:flex-row min-h-screen pt-16">
+        <!-- Left Side: Visual -->
+        <div class="hidden lg:block lg:w-1/2 relative overflow-hidden h-screen sticky top-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+            <img 
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80" 
+                alt="Professional usher at luxury event" 
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+            <div class="absolute bottom-16 left-16 z-20 max-w-md">
+                <h2 class="text-5xl font-serif font-bold text-white mb-4 leading-tight">
+                    Elevating African Excellence.
+                </h2>
+                <p class="text-lg text-white/80">
+                    Experience premium event services tailored to the most prestigious occasions across Uganda.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Side: Booking Form -->
+        <div class="w-full lg:w-1/2 flex flex-col bg-background-dark px-6 md:px-12 lg:px-16 py-12 overflow-y-auto custom-scrollbar">
+            <div class="max-w-xl mx-auto w-full">
+                <!-- Progress Indicator -->
+                <div class="mb-10">
+                    <div class="flex justify-between items-end mb-3">
+                        <div>
+                            <p id="step-indicator" class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-1">Step 1 of 3</p>
+                            <h2 class="text-2xl font-bold">Premium Booking</h2>
+                        </div>
+                        <span class="text-primary text-sm font-bold">33% Complete</span>
+                    </div>
+                    <div class="h-1 w-full bg-accent-brown/30 rounded-full overflow-hidden">
+                        <div id="booking-progress" class="h-full bg-primary rounded-full transition-all duration-500" style="width: 33%;"></div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <form id="booking-form" data-validate data-action="booking" class="space-y-8">
+                    
+                    <!-- Step 1: Personal Information -->
+                    <div data-step="1" class="space-y-6">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">person</span>
+                            Personal Information
+                        </h3>
+                        
+                        <!-- Full Name -->
+                        <div>
+                            <label class="label">Full Name *</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">badge</span>
+                                <input 
+                                    type="text" 
+                                    name="fullName"
+                                    class="input-icon" 
+                                    placeholder="John Doe"
+                                    required
+                                    minlength="3"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="label">Email Address *</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">mail</span>
+                                <input 
+                                    type="email" 
+                                    name="email"
+                                    class="input-icon" 
+                                    placeholder="john@example.com"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label class="label">Phone Number (WhatsApp) *</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">call</span>
+                                <input 
+                                    type="tel" 
+                                    name="phone"
+                                    class="input-icon" 
+                                    placeholder="+256 701 234 567"
+                                    required
+                                >
+                            </div>
+                            <p class="text-muted-gold/60 text-xs mt-1">We'll contact you via WhatsApp for confirmation</p>
+                        </div>
+
+                        <button type="button" data-next-step class="btn-primary w-full py-4">
+                            Continue to Event Details
+                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Event Details -->
+                    <div data-step="2" class="space-y-6 hidden">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">event</span>
+                            Event Details
+                        </h3>
+
+                        <!-- Event Type -->
+                        <div>
+                            <label class="label">Event Type *</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">celebration</span>
+                                <select name="eventType" class="input-icon appearance-none" required>
+                                    <option value="" disabled selected>Select event type</option>
+                                    <option value="wedding">Luxury Wedding</option>
+                                    <option value="corporate">Corporate Gala</option>
+                                    <option value="private">Private VIP Party</option>
+                                    <option value="cultural">Cultural Celebration</option>
+                                    <option value="birthday">Birthday Celebration</option>
+                                    <option value="other">Other Event</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-accent-brown pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="label">Event Date *</label>
+                                <div class="relative">
+                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">calendar_today</span>
+                                    <input 
+                                        type="date" 
+                                        name="eventDate"
+                                        class="input-icon [color-scheme:dark]" 
+                                        required
+                                    >
+                                </div>
+                            </div>
+                            <div>
+                                <label class="label">Start Time *</label>
+                                <div class="relative">
+                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">schedule</span>
+                                    <input 
+                                        type="time" 
+                                        name="eventTime"
+                                        class="input-icon [color-scheme:dark]" 
+                                        required
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div>
+                            <label class="label">Event Venue/Location *</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">location_on</span>
+                                <input 
+                                    type="text" 
+                                    name="location"
+                                    class="input-icon" 
+                                    placeholder="e.g. Kampala Serena Hotel"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Expected Guests -->
+                        <div>
+                            <label class="label">Expected Number of Guests</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">groups</span>
+                                <select name="guestCount" class="input-icon appearance-none">
+                                    <option value="50-100">50 - 100 guests</option>
+                                    <option value="100-200">100 - 200 guests</option>
+                                    <option value="200-500">200 - 500 guests</option>
+                                    <option value="500+">500+ guests</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-accent-brown pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button type="button" data-prev-step class="btn-secondary flex-1 py-4">
+                                <span class="material-symbols-outlined mr-2">arrow_back</span>
+                                Back
+                            </button>
+                            <button type="button" data-next-step class="btn-primary flex-1 py-4">
+                                Continue
+                                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Services Selection -->
+                    <div data-step="3" class="space-y-6 hidden">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                            Services Required
+                        </h3>
+
+                        <!-- Service Checkboxes -->
+                        <div class="space-y-4">
+                            <label class="card p-4 flex items-start gap-4 cursor-pointer hover:border-primary/50 transition-colors">
+                                <input type="checkbox" name="services" value="ushers" class="mt-1 w-5 h-5 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                <div>
+                                    <p class="font-bold text-white">Professional Ushers</p>
+                                    <p class="text-muted-gold text-sm">Elite staff in signature uniforms</p>
+                                </div>
+                                <span class="ml-auto text-primary font-bold">From UGX 500K</span>
+                            </label>
+
+                            <label class="card p-4 flex items-start gap-4 cursor-pointer hover:border-primary/50 transition-colors">
+                                <input type="checkbox" name="services" value="cocktails" class="mt-1 w-5 h-5 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                <div>
+                                    <p class="font-bold text-white">Cocktail Mixology</p>
+                                    <p class="text-muted-gold text-sm">Artisanal bar service</p>
+                                </div>
+                                <span class="ml-auto text-primary font-bold">From UGX 750K</span>
+                            </label>
+
+                            <label class="card p-4 flex items-start gap-4 cursor-pointer hover:border-primary/50 transition-colors">
+                                <input type="checkbox" name="services" value="juices" class="mt-1 w-5 h-5 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                <div>
+                                    <p class="font-bold text-white">Signature Juices</p>
+                                    <p class="text-muted-gold text-sm">Fresh organic blends</p>
+                                </div>
+                                <span class="ml-auto text-primary font-bold">From UGX 400K</span>
+                            </label>
+
+                            <label class="card p-4 flex items-start gap-4 cursor-pointer hover:border-primary/50 transition-colors">
+                                <input type="checkbox" name="services" value="decor" class="mt-1 w-5 h-5 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                <div>
+                                    <p class="font-bold text-white">Bespoke Decor</p>
+                                    <p class="text-muted-gold text-sm">Custom event design</p>
+                                </div>
+                                <span class="ml-auto text-primary font-bold">Custom Quote</span>
+                            </label>
+                        </div>
+
+                        <!-- Special Requirements -->
+                        <div>
+                            <label class="label">Special Requirements or Notes</label>
+                            <textarea 
+                                name="requirements"
+                                class="input resize-none" 
+                                rows="4"
+                                placeholder="Tell us about any specific needs, themes, or special requests..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Budget Range -->
+                        <div>
+                            <label class="label">Estimated Budget Range</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-brown">payments</span>
+                                <select name="budget" class="input-icon appearance-none">
+                                    <option value="1-3m">UGX 1M - 3M</option>
+                                    <option value="3-5m">UGX 3M - 5M</option>
+                                    <option value="5-10m">UGX 5M - 10M</option>
+                                    <option value="10m+">UGX 10M+</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-accent-brown pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button type="button" data-prev-step class="btn-secondary flex-1 py-4">
+                                <span class="material-symbols-outlined mr-2">arrow_back</span>
+                                Back
+                            </button>
+                            <button type="submit" class="btn-primary flex-1 py-4 shadow-glow">
+                                Submit Booking Request
+                                <span class="material-symbols-outlined ml-2">check</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Trust Indicators -->
+                <div class="mt-12 pt-8 border-t border-accent-brown/20">
+                    <p class="text-center text-muted-gold/60 text-xs uppercase tracking-widest mb-4">
+                        Trusted by 500+ events across Uganda
+                    </p>
+                    <div class="flex justify-center gap-8">
+                        <div class="flex items-center gap-2 text-muted-gold/40">
+                            <span class="material-symbols-outlined">verified</span>
+                            <span class="text-xs">Verified Business</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-muted-gold/40">
+                            <span class="material-symbols-outlined">security</span>
+                            <span class="text-xs">Secure Booking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-accent-brown/20 py-6 px-6 lg:hidden">
+        <div class="flex flex-col items-center gap-4">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">© 2026 Mwiza Services</span>
+            <div class="flex gap-6">
+                <a href="/terms.html" class="text-white/50 hover:text-primary text-xs">Terms</a>
+                <a href="/privacy-policy.html" class="text-white/50 hover:text-primary text-xs">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

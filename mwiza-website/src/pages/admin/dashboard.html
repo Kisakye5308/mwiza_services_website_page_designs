@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Mwiza Services Admin</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/output.css">
+</head>
+<body class="bg-background-dark text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-72 bg-sidebar-dark border-r border-accent-brown flex flex-col justify-between py-6 h-screen sticky top-0">
+            <div class="flex flex-col gap-8 px-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary size-10 rounded-full flex items-center justify-center text-background-dark">
+                        <span class="material-symbols-outlined font-bold">diamond</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight text-white">Mwiza Services</h1>
+                        <p class="text-primary/70 text-xs font-medium uppercase tracking-widest">Admin Portal</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-2">
+                    <a href="/admin/dashboard.html" class="sidebar-link-active">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="text-sm">Dashboard</span>
+                    </a>
+                    <a href="/admin/bookings.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        <span class="text-sm">Bookings</span>
+                        <span class="ml-auto bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded-full">12</span>
+                    </a>
+                    <a href="/admin/gallery.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="text-sm">Gallery</span>
+                    </a>
+                    <a href="/admin/services.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">construction</span>
+                        <span class="text-sm">Services</span>
+                    </a>
+                    <a href="/admin/testimonials.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">reviews</span>
+                        <span class="text-sm">Testimonials</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="px-6 flex flex-col gap-4">
+                <a href="/" target="_blank" class="btn-primary w-full justify-center text-sm">
+                    View Website
+                </a>
+                <div class="border-t border-accent-brown pt-4 space-y-1">
+                    <a href="/admin/settings.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="text-sm">Settings</span>
+                    </a>
+                    <a href="/admin/login.html" class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-400/10">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span class="text-sm">Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-y-auto custom-scrollbar">
+            <!-- Top Header -->
+            <header class="flex flex-wrap justify-between items-center gap-4 p-8 border-b border-accent-brown bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-10">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-white">
+                        Welcome back, <span class="text-primary italic">Mwiza</span>
+                    </h2>
+                    <p class="text-muted-gold text-sm">Managing luxury events across Uganda since 2018.</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="btn-secondary text-sm">
+                        <span class="material-symbols-outlined mr-2">download</span>
+                        Download Report
+                    </button>
+                    <div class="size-10 rounded-full border-2 border-primary overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Admin" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-8 space-y-8">
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card p-6 border-l-4 border-primary">
+                        <div class="flex justify-between items-start">
+                            <p class="text-muted-gold text-sm">Total Bookings</p>
+                            <span class="material-symbols-outlined text-primary">book_online</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-white mt-2">1,284</p>
+                        <p class="text-success text-sm font-bold flex items-center gap-1 mt-2">
+                            <span class="material-symbols-outlined text-sm">trending_up</span> +12.5%
+                        </p>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex justify-between items-start">
+                            <p class="text-muted-gold text-sm">Pending Requests</p>
+                            <span class="material-symbols-outlined text-primary">pending_actions</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-white mt-2">12</p>
+                        <p class="text-primary text-sm font-bold mt-2">Awaiting review</p>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex justify-between items-start">
+                            <p class="text-muted-gold text-sm">Active Services</p>
+                            <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-white mt-2">48</p>
+                        <p class="text-muted-gold text-sm mt-2">Across 5 categories</p>
+                    </div>
+
+                    <div class="card p-6">
+                        <div class="flex justify-between items-start">
+                            <p class="text-muted-gold text-sm">Recent Revenue</p>
+                            <span class="material-symbols-outlined text-primary">payments</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-white mt-2">UGX 4.2M</p>
+                        <p class="text-success text-sm font-bold flex items-center gap-1 mt-2">
+                            <span class="material-symbols-outlined text-sm">trending_up</span> +18.2%
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <!-- Recent Bookings Table -->
+                    <div class="xl:col-span-2 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-bold text-white">Recent Bookings</h3>
+                            <a href="/admin/bookings.html" class="text-primary text-sm font-semibold hover:underline">View All</a>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="w-full text-left">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <th>Event Type</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-accent-brown/30">
+                                    <tr class="table-row">
+                                        <td class="font-medium text-white">Kato Wilson</td>
+                                        <td class="text-muted-gold font-serif italic">Traditional Wedding</td>
+                                        <td class="text-muted-gold">Feb 12, 2026</td>
+                                        <td><span class="badge-primary">Pending</span></td>
+                                        <td>
+                                            <a href="/admin/booking-details.html" class="text-primary hover:underline text-sm">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="font-medium text-white">Sarah Namuli</td>
+                                        <td class="text-muted-gold font-serif italic">Corporate Gala</td>
+                                        <td class="text-muted-gold">Feb 15, 2026</td>
+                                        <td><span class="badge-success">Confirmed</span></td>
+                                        <td>
+                                            <a href="/admin/booking-details.html" class="text-primary hover:underline text-sm">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="font-medium text-white">John Okello</td>
+                                        <td class="text-muted-gold font-serif italic">Private Dinner</td>
+                                        <td class="text-muted-gold">Feb 18, 2026</td>
+                                        <td><span class="badge-primary">Pending</span></td>
+                                        <td>
+                                            <a href="/admin/booking-details.html" class="text-primary hover:underline text-sm">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="font-medium text-white">Grace Akello</td>
+                                        <td class="text-muted-gold font-serif italic">Birthday Celebration</td>
+                                        <td class="text-muted-gold">Feb 20, 2026</td>
+                                        <td><span class="badge-success">Confirmed</span></td>
+                                        <td>
+                                            <a href="/admin/booking-details.html" class="text-primary hover:underline text-sm">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-white">Quick Actions</h3>
+                        <div class="card p-6 space-y-4">
+                            <button class="flex items-center gap-4 w-full p-4 rounded-lg bg-primary text-background-dark font-bold hover:scale-[1.02] transition-all text-left">
+                                <div class="bg-background-dark/10 p-2 rounded-md">
+                                    <span class="material-symbols-outlined">add_circle</span>
+                                </div>
+                                <div>
+                                    <span class="block">Add New Event</span>
+                                    <span class="text-xs opacity-70 font-normal">Create a manual booking</span>
+                                </div>
+                            </button>
+
+                            <button class="flex items-center gap-4 w-full p-4 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all text-left">
+                                <div class="bg-primary/10 p-2 rounded-md">
+                                    <span class="material-symbols-outlined">cloud_upload</span>
+                                </div>
+                                <div>
+                                    <span class="block">Upload to Gallery</span>
+                                    <span class="text-xs text-muted-gold font-normal">Add photos of recent work</span>
+                                </div>
+                            </button>
+
+                            <button class="flex items-center gap-4 w-full p-4 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all text-left">
+                                <div class="bg-primary/10 p-2 rounded-md">
+                                    <span class="material-symbols-outlined">edit_note</span>
+                                </div>
+                                <div>
+                                    <span class="block">Edit Services</span>
+                                    <span class="text-xs text-muted-gold font-normal">Manage service catalog</span>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Upcoming Events -->
+                        <div class="card p-6">
+                            <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">event</span>
+                                Upcoming This Week
+                            </h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-primary/10 p-3 rounded-lg text-center">
+                                        <p class="text-primary text-xs font-bold">JAN</p>
+                                        <p class="text-white text-lg font-bold">21</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-white">Corporate Gala</p>
+                                        <p class="text-muted-gold text-sm">Serena Hotel, 7 PM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-primary/10 p-3 rounded-lg text-center">
+                                        <p class="text-primary text-xs font-bold">JAN</p>
+                                        <p class="text-white text-lg font-bold">24</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-white">Wedding Reception</p>
+                                        <p class="text-muted-gold text-sm">Golf Course Hotel, 2 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
