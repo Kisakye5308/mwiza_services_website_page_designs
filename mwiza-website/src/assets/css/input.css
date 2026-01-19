@@ -131,22 +131,30 @@
   
   /* Luxury Card Grid */
   .service-card {
-    @apply group flex flex-col gap-4 rounded-xl border border-white/5 bg-rich-brown/20 p-8 
+    @apply flex flex-col gap-4 rounded-xl border border-white/5 bg-rich-brown/20 p-8 
            hover:bg-rich-brown/40 transition-all hover:border-primary/30;
   }
   
   /* Gallery Items */
   .gallery-item {
-    @apply relative overflow-hidden rounded-xl group cursor-pointer;
+    @apply relative overflow-hidden rounded-xl cursor-pointer;
   }
   
   .gallery-item img {
-    @apply w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110;
+    @apply w-full h-auto object-cover transition-transform duration-700;
+  }
+  
+  .gallery-item:hover img {
+    @apply scale-110;
   }
   
   .gallery-overlay {
     @apply absolute inset-0 bg-rich-brown/90 opacity-0 flex flex-col justify-end p-8 
-           transition-all duration-400 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0;
+           transition-all duration-300 translate-y-4;
+  }
+  
+  .gallery-item:hover .gallery-overlay {
+    @apply opacity-100 translate-y-0;
   }
   
   /* Admin Sidebar */
