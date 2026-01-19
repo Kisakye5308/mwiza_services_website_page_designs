@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings | Mwiza Services Admin</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/output.css">
+</head>
+<body class="bg-background-dark text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-72 bg-sidebar-dark border-r border-accent-brown flex flex-col justify-between py-6 h-screen sticky top-0">
+            <div class="flex flex-col gap-8 px-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary size-10 rounded-full flex items-center justify-center text-background-dark">
+                        <span class="material-symbols-outlined font-bold">diamond</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight text-white">Mwiza Services</h1>
+                        <p class="text-primary/70 text-xs font-medium uppercase tracking-widest">Admin Portal</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-2">
+                    <a href="/admin/dashboard.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="text-sm">Dashboard</span>
+                    </a>
+                    <a href="/admin/bookings.html" class="sidebar-link-active">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        <span class="text-sm">Bookings</span>
+                        <span class="ml-auto bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded-full">12</span>
+                    </a>
+                    <a href="/admin/gallery.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="text-sm">Gallery</span>
+                    </a>
+                    <a href="/admin/services.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">construction</span>
+                        <span class="text-sm">Services</span>
+                    </a>
+                    <a href="/admin/testimonials.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">reviews</span>
+                        <span class="text-sm">Testimonials</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="px-6 flex flex-col gap-4">
+                <a href="/" target="_blank" class="btn-primary w-full justify-center text-sm">
+                    View Website
+                </a>
+                <div class="border-t border-accent-brown pt-4 space-y-1">
+                    <a href="/admin/settings.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="text-sm">Settings</span>
+                    </a>
+                    <a href="/admin/login.html" class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-400/10">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span class="text-sm">Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-y-auto custom-scrollbar">
+            <!-- Top Header -->
+            <header class="flex flex-wrap justify-between items-center gap-4 p-8 border-b border-accent-brown bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-10">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-white">Booking Management</h2>
+                    <p class="text-muted-gold text-sm">View and manage all client booking requests.</p>
+                </div>
+                <button class="btn-primary" onclick="openNewBookingModal()">
+                    <span class="material-symbols-outlined mr-2">add</span>
+                    New Booking
+                </button>
+            </header>
+
+            <div class="p-8 space-y-6">
+                <!-- Filters & Search -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="relative flex-1 min-w-[250px]">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted-gold">search</span>
+                        <input 
+                            type="text" 
+                            placeholder="Search by client name, event type..."
+                            class="input pl-12 w-full"
+                            id="booking-search"
+                        >
+                    </div>
+                    <select class="input min-w-[150px]" id="status-filter">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <select class="input min-w-[150px]" id="date-filter">
+                        <option value="">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+
+                <!-- Bookings Table -->
+                <div class="table-container">
+                    <table class="w-full text-left">
+                        <thead class="table-header">
+                            <tr>
+                                <th>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </th>
+                                <th>Client</th>
+                                <th>Event Type</th>
+                                <th>Services</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-accent-brown/30" id="bookings-list">
+                            <tr class="table-row">
+                                <td>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                            KW
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-white">Kato Wilson</p>
+                                            <p class="text-muted-gold text-xs">kato@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold font-serif italic">Traditional Wedding</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="badge-primary text-xs">Ushers</span>
+                                        <span class="badge-secondary text-xs">Cocktails</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold">Feb 12, 2026</td>
+                                <td><span class="badge-primary">Pending</span></td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <a href="/admin/booking-details.html" class="btn-ghost size-8 p-0 justify-center" title="View">
+                                            <span class="material-symbols-outlined text-sm">visibility</span>
+                                        </a>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-success" title="Approve">
+                                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                                        </button>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-red-400" title="Reject">
+                                            <span class="material-symbols-outlined text-sm">cancel</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                            SN
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-white">Sarah Namuli</p>
+                                            <p class="text-muted-gold text-xs">sarah@company.ug</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold font-serif italic">Corporate Gala</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="badge-primary text-xs">Ushers</span>
+                                        <span class="badge-secondary text-xs">Cocktails</span>
+                                        <span class="badge-secondary text-xs">Decor</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold">Feb 15, 2026</td>
+                                <td><span class="badge-success">Confirmed</span></td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <a href="/admin/booking-details.html" class="btn-ghost size-8 p-0 justify-center" title="View">
+                                            <span class="material-symbols-outlined text-sm">visibility</span>
+                                        </a>
+                                        <button class="btn-ghost size-8 p-0 justify-center" title="Edit">
+                                            <span class="material-symbols-outlined text-sm">edit</span>
+                                        </button>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-red-400" title="Delete">
+                                            <span class="material-symbols-outlined text-sm">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                            JO
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-white">John Okello</p>
+                                            <p class="text-muted-gold text-xs">john.o@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold font-serif italic">Private Dinner</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="badge-secondary text-xs">Juices</span>
+                                        <span class="badge-secondary text-xs">Cocktails</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold">Feb 18, 2026</td>
+                                <td><span class="badge-primary">Pending</span></td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <a href="/admin/booking-details.html" class="btn-ghost size-8 p-0 justify-center" title="View">
+                                            <span class="material-symbols-outlined text-sm">visibility</span>
+                                        </a>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-success" title="Approve">
+                                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                                        </button>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-red-400" title="Reject">
+                                            <span class="material-symbols-outlined text-sm">cancel</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                            GA
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-white">Grace Akello</p>
+                                            <p class="text-muted-gold text-xs">grace@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold font-serif italic">Birthday Celebration</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="badge-primary text-xs">Ushers</span>
+                                        <span class="badge-secondary text-xs">Juices</span>
+                                        <span class="badge-secondary text-xs">Decor</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold">Feb 20, 2026</td>
+                                <td><span class="badge-success">Confirmed</span></td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <a href="/admin/booking-details.html" class="btn-ghost size-8 p-0 justify-center" title="View">
+                                            <span class="material-symbols-outlined text-sm">visibility</span>
+                                        </a>
+                                        <button class="btn-ghost size-8 p-0 justify-center" title="Edit">
+                                            <span class="material-symbols-outlined text-sm">edit</span>
+                                        </button>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-red-400" title="Delete">
+                                            <span class="material-symbols-outlined text-sm">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>
+                                    <input type="checkbox" class="w-4 h-4 rounded border-accent-brown bg-card-dark text-primary focus:ring-primary">
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                            MK
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-white">Moses Kigongo</p>
+                                            <p class="text-muted-gold text-xs">moses.k@business.ug</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold font-serif italic">Product Launch</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="badge-primary text-xs">Ushers</span>
+                                        <span class="badge-secondary text-xs">Cocktails</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted-gold">Feb 25, 2026</td>
+                                <td><span class="badge-warning">In Review</span></td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <a href="/admin/booking-details.html" class="btn-ghost size-8 p-0 justify-center" title="View">
+                                            <span class="material-symbols-outlined text-sm">visibility</span>
+                                        </a>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-success" title="Approve">
+                                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                                        </button>
+                                        <button class="btn-ghost size-8 p-0 justify-center text-red-400" title="Reject">
+                                            <span class="material-symbols-outlined text-sm">cancel</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center pt-4">
+                    <p class="text-muted-gold text-sm">Showing 1-5 of 12 bookings</p>
+                    <div class="flex items-center gap-2">
+                        <button class="btn-ghost size-10 p-0 justify-center disabled:opacity-50" disabled>
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button class="size-10 rounded-lg bg-primary text-background-dark font-bold">1</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">2</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">3</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

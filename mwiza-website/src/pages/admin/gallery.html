@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Management | Mwiza Services Admin</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/output.css">
+</head>
+<body class="bg-background-dark text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-72 bg-sidebar-dark border-r border-accent-brown flex flex-col justify-between py-6 h-screen sticky top-0">
+            <div class="flex flex-col gap-8 px-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary size-10 rounded-full flex items-center justify-center text-background-dark">
+                        <span class="material-symbols-outlined font-bold">diamond</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight text-white">Mwiza Services</h1>
+                        <p class="text-primary/70 text-xs font-medium uppercase tracking-widest">Admin Portal</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-2">
+                    <a href="/admin/dashboard.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="text-sm">Dashboard</span>
+                    </a>
+                    <a href="/admin/bookings.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        <span class="text-sm">Bookings</span>
+                        <span class="ml-auto bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded-full">12</span>
+                    </a>
+                    <a href="/admin/gallery.html" class="sidebar-link-active">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="text-sm">Gallery</span>
+                    </a>
+                    <a href="/admin/services.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">construction</span>
+                        <span class="text-sm">Services</span>
+                    </a>
+                    <a href="/admin/testimonials.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">reviews</span>
+                        <span class="text-sm">Testimonials</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="px-6 flex flex-col gap-4">
+                <a href="/" target="_blank" class="btn-primary w-full justify-center text-sm">
+                    View Website
+                </a>
+                <div class="border-t border-accent-brown pt-4 space-y-1">
+                    <a href="/admin/settings.html" class="sidebar-link">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="text-sm">Settings</span>
+                    </a>
+                    <a href="/admin/login.html" class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-400/10">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span class="text-sm">Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-y-auto custom-scrollbar">
+            <!-- Top Header -->
+            <header class="flex flex-wrap justify-between items-center gap-4 p-8 border-b border-accent-brown bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-10">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-white">Gallery Management</h2>
+                    <p class="text-muted-gold text-sm">Upload and organize your portfolio images.</p>
+                </div>
+                <button class="btn-primary" onclick="Modal.open('upload-modal')">
+                    <span class="material-symbols-outlined mr-2">cloud_upload</span>
+                    Upload Images
+                </button>
+            </header>
+
+            <div class="p-8 space-y-6">
+                <!-- Stats Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="card p-4 text-center">
+                        <p class="text-3xl font-bold text-white">156</p>
+                        <p class="text-muted-gold text-sm">Total Images</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <p class="text-3xl font-bold text-white">42</p>
+                        <p class="text-muted-gold text-sm">Weddings</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <p class="text-3xl font-bold text-white">38</p>
+                        <p class="text-muted-gold text-sm">Corporate</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <p class="text-3xl font-bold text-white">76</p>
+                        <p class="text-muted-gold text-sm">Private Events</p>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="relative flex-1 min-w-[250px]">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted-gold">search</span>
+                        <input 
+                            type="text" 
+                            placeholder="Search images..."
+                            class="input pl-12 w-full"
+                        >
+                    </div>
+                    <select class="input min-w-[150px]">
+                        <option value="">All Categories</option>
+                        <option value="ushers">Ushers</option>
+                        <option value="cocktails">Cocktails</option>
+                        <option value="juices">Juices</option>
+                        <option value="decor">Decor</option>
+                    </select>
+                    <select class="input min-w-[150px]">
+                        <option value="">Sort By</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                    <div class="flex border border-accent-brown rounded-lg overflow-hidden">
+                        <button class="px-3 py-2 bg-primary text-background-dark">
+                            <span class="material-symbols-outlined text-sm">grid_view</span>
+                        </button>
+                        <button class="px-3 py-2 text-muted-gold hover:bg-surface-dark">
+                            <span class="material-symbols-outlined text-sm">view_list</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                    <!-- Image 1 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Wedding ushers" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Wedding Ushers</p>
+                                <p class="text-xs text-white/60">Ushers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=80" alt="Cocktail service" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Signature Cocktails</p>
+                                <p class="text-xs text-white/60">Cocktails</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400&q=80" alt="Fresh juices" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Tropical Juices</p>
+                                <p class="text-xs text-white/60">Juices</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=400&q=80" alt="Event decor" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Luxury Decor</p>
+                                <p class="text-xs text-white/60">Decor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 5 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Corporate event" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Corporate Gala</p>
+                                <p class="text-xs text-white/60">Ushers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 6 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=400&q=80" alt="Mocktails" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Artisan Mocktails</p>
+                                <p class="text-xs text-white/60">Cocktails</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 7 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80" alt="Wedding reception" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Wedding Setup</p>
+                                <p class="text-xs text-white/60">Decor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 8 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1529543544277-750e0e363885?w=400&q=80" alt="VIP ushers" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">VIP Ushers</p>
+                                <p class="text-xs text-white/60">Ushers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 9 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&q=80" alt="Fruit display" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Fruit Display</p>
+                                <p class="text-xs text-white/60">Juices</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 10 -->
+                    <div class="gallery-item aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&q=80" alt="Party setup" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="flex items-center gap-2">
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                                <button class="size-10 rounded-full bg-red-500/50 flex items-center justify-center hover:bg-red-500/70 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                            <div class="text-center mt-2">
+                                <p class="text-sm font-medium">Birthday Party</p>
+                                <p class="text-xs text-white/60">Decor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center pt-4">
+                    <p class="text-muted-gold text-sm">Showing 1-10 of 156 images</p>
+                    <div class="flex items-center gap-2">
+                        <button class="btn-ghost size-10 p-0 justify-center disabled:opacity-50" disabled>
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button class="size-10 rounded-lg bg-primary text-background-dark font-bold">1</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">2</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">3</button>
+                        <span class="text-muted-gold">...</span>
+                        <button class="btn-ghost size-10 p-0 justify-center">16</button>
+                        <button class="btn-ghost size-10 p-0 justify-center">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content max-w-2xl">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-white">Upload Images</h3>
+                <button class="btn-ghost size-10 p-0 justify-center" onclick="Modal.close('upload-modal')">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Drop Zone -->
+                <div class="border-2 border-dashed border-accent-brown rounded-xl p-12 text-center hover:border-primary transition-colors cursor-pointer" id="drop-zone">
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="size-16 rounded-full bg-primary/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Drag and drop your images here</p>
+                            <p class="text-muted-gold text-sm mt-1">or click to browse from your computer</p>
+                        </div>
+                        <p class="text-accent-brown text-xs">PNG, JPG, WEBP up to 10MB each • Max 20 files at once</p>
+                    </div>
+                    <input type="file" multiple accept="image/*" class="hidden" id="file-input">
+                </div>
+
+                <!-- Upload Settings -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="label">Category</label>
+                        <select class="input">
+                            <option value="">Select category</option>
+                            <option value="ushers">Ushers</option>
+                            <option value="cocktails">Cocktails</option>
+                            <option value="juices">Juices</option>
+                            <option value="decor">Decor</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label">Event Name (Optional)</label>
+                        <input type="text" class="input" placeholder="e.g., Namuli Wedding 2026">
+                    </div>
+                </div>
+
+                <!-- Preview Area -->
+                <div id="preview-area" class="hidden">
+                    <label class="label">Selected Files</label>
+                    <div class="grid grid-cols-4 gap-3" id="preview-grid">
+                        <!-- Previews will be inserted here -->
+                    </div>
+                </div>
+                
+                <div class="flex justify-end gap-3 pt-4 border-t border-accent-brown">
+                    <button type="button" class="btn-ghost" onclick="Modal.close('upload-modal')">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <span class="material-symbols-outlined mr-2">cloud_upload</span>
+                        Upload Images
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        // Drop zone functionality
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const previewArea = document.getElementById('preview-area');
+        const previewGrid = document.getElementById('preview-grid');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-primary', 'bg-primary/5');
+        });
+        
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-primary', 'bg-primary/5');
+        });
+        
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-primary', 'bg-primary/5');
+            handleFiles(e.dataTransfer.files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                previewArea.classList.remove('hidden');
+                previewGrid.innerHTML = '';
+                
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const div = document.createElement('div');
+                        div.className = 'relative aspect-square rounded-lg overflow-hidden';
+                        div.innerHTML = `
+                            <img src="${e.target.result}" class="w-full h-full object-cover">
+                            <button class="absolute top-1 right-1 size-6 rounded-full bg-red-500 flex items-center justify-center text-white hover:bg-red-600">
+                                <span class="material-symbols-outlined text-xs">close</span>
+                            </button>
+                        `;
+                        previewGrid.appendChild(div);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
