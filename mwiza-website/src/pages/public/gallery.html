@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse our portfolio of luxury events - weddings, corporate galas, and private celebrations managed by Mwiza Services in Uganda.">
-    <title>Portfolio Gallery | Mwiza Services</title>
+    <title>Gallery | Mwiza Services</title>
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,31 +21,57 @@
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 nav-glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3">
-                    <div class="size-10 text-primary">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="size-10 text-primary transition-transform group-hover:scale-110">
                         <svg fill="currentColor" viewBox="0 0 48 48"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path></svg>
                     </div>
-                    <h1 class="text-xl font-bold tracking-tight">MWIZA<span class="text-primary">.</span></h1>
+                    <h1 class="text-xl font-bold tracking-tight uppercase">Mwiza <span class="text-primary">Services</span></h1>
                 </a>
-                <nav class="hidden md:flex items-center gap-8">
+                <nav class="hidden lg:flex items-center gap-8">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="gallery.html" class="nav-link nav-link-active">Gallery</a>
+                    <a href="about.html" class="nav-link">About Us</a>
                     <a href="services.html" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link nav-link-active">Gallery</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 <div class="flex items-center gap-4">
-                    <a href="booking.html" class="btn-primary">Book Now</a>
+                    <a href="booking.html" class="btn-primary hidden sm:flex">Book Now</a>
+                    <button id="mobile-nav-toggle" class="lg:hidden p-2 text-white hover:text-primary">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-surface-dark border-l border-accent-brown transform translate-x-full transition-transform duration-300 lg:hidden z-50">
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between p-6 border-b border-accent-brown">
+                    <span class="text-lg font-bold">Menu</span>
+                    <button id="mobile-nav-close" class="p-2 hover:text-primary">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <nav class="flex-1 p-6 space-y-2">
+                    <a href="index.html" class="sidebar-link"><span class="material-symbols-outlined">home</span><span>Home</span></a>
+                    <a href="about.html" class="sidebar-link"><span class="material-symbols-outlined">info</span><span>About Us</span></a>
+                    <a href="services.html" class="sidebar-link"><span class="material-symbols-outlined">auto_awesome</span><span>Services</span></a>
+                    <a href="gallery.html" class="sidebar-link-active"><span class="material-symbols-outlined">photo_library</span><span>Gallery</span></a>
+                    <a href="contact.html" class="sidebar-link"><span class="material-symbols-outlined">mail</span><span>Contact</span></a>
+                </nav>
+                <div class="p-6 border-t border-accent-brown">
+                    <a href="booking.html" class="btn-primary w-full justify-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity lg:hidden z-40"></div>
     </header>
 
     <main class="pt-20">
         <!-- Page Header -->
         <section class="py-16 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto text-center">
-                <h1 class="font-serif text-5xl md:text-6xl font-bold text-white mb-4">Our Event Portfolio</h1>
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-white mb-4">Our Event Gallery</h1>
                 <div class="w-32 h-1.5 bg-primary rounded-full mx-auto mb-6"></div>
                 <p class="text-white/60 max-w-xl mx-auto text-lg">
                     Experience the pinnacle of hospitality and design. Every detail curated for the most prestigious events in Uganda.
