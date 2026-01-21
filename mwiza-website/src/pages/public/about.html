@@ -53,27 +53,27 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-background-dark border-l border-white/10 transform translate-x-full transition-transform duration-300 md:hidden z-50">
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-[#0d0d0d] border-l border-primary/20 shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden z-50">
             <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between p-6 border-b border-white/10">
-                    <span class="text-lg font-bold">Menu</span>
-                    <button id="mobile-nav-close" class="p-2 hover:text-primary">
+                <div class="flex items-center justify-between p-6 border-b border-primary/20 bg-black">
+                    <span class="text-lg font-bold text-white">Menu</span>
+                    <button id="mobile-nav-close" class="p-2 hover:text-primary text-white">
                         <span class="material-symbols-outlined">close</span>
                     </button>
                 </div>
-                <nav class="flex-1 p-6 space-y-4">
+                <nav class="flex-1 p-6 space-y-4 bg-[#0d0d0d]">
                     <a href="index.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Home</a>
                     <a href="about.html" class="block py-2 text-primary font-semibold">About Us</a>
                     <a href="services.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Services</a>
                     <a href="gallery.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Gallery</a>
                     <a href="contact.html" class="block py-2 text-white/80 hover:text-primary font-semibold">Contact</a>
                 </nav>
-                <div class="p-6 border-t border-white/10">
+                <div class="p-6 border-t border-primary/20 bg-black">
                     <a href="booking.html" class="flex w-full items-center justify-center rounded-full h-12 bg-primary text-background-dark text-sm font-black uppercase tracking-widest">Book Now</a>
                 </div>
             </div>
         </div>
-        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity md:hidden z-40"></div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 hidden transition-opacity md:hidden z-40"></div>
     </header>
 
     <main>
