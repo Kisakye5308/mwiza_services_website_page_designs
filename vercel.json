@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "buildCommand": null,
+  "outputDirectory": "mwiza-website/src",
+  "rewrites": [
+    { "source": "/", "destination": "/pages/public/index.html" },
+    { "source": "/about", "destination": "/pages/public/about.html" },
+    { "source": "/services", "destination": "/pages/public/services.html" },
+    { "source": "/gallery", "destination": "/pages/public/gallery.html" },
+    { "source": "/contact", "destination": "/pages/public/contact.html" },
+    { "source": "/booking", "destination": "/pages/public/booking.html" },
+    { "source": "/booking-success", "destination": "/pages/public/booking-success.html" },
+    { "source": "/privacy", "destination": "/pages/public/privacy.html" },
+    { "source": "/terms", "destination": "/pages/public/terms.html" },
+    { "source": "/admin", "destination": "/pages/admin/login.html" },
+    { "source": "/admin/login", "destination": "/pages/admin/login.html" },
+    { "source": "/admin/dashboard", "destination": "/pages/admin/dashboard.html" },
+    { "source": "/admin/bookings", "destination": "/pages/admin/bookings.html" },
+    { "source": "/admin/booking-details", "destination": "/pages/admin/booking-details.html" },
+    { "source": "/admin/services", "destination": "/pages/admin/services.html" },
+    { "source": "/admin/gallery", "destination": "/pages/admin/gallery.html" }
+  ]
+}
