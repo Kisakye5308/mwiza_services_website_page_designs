@@ -81,11 +81,16 @@ const Utils = {
 const MobileNav = {
   init() {
     this.toggleBtn = document.getElementById('mobile-nav-toggle');
+    this.closeBtn = document.getElementById('mobile-nav-close');
     this.menu = document.getElementById('mobile-menu');
     this.overlay = document.getElementById('mobile-overlay');
     
     if (this.toggleBtn) {
-      this.toggleBtn.addEventListener('click', () => this.toggle());
+      this.toggleBtn.addEventListener('click', () => this.open());
+    }
+    
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', () => this.close());
     }
     
     if (this.overlay) {
@@ -96,11 +101,6 @@ const MobileNav = {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') this.close();
     });
-  },
-
-  toggle() {
-    const isOpen = this.menu?.classList.contains('translate-x-0');
-    isOpen ? this.close() : this.open();
   },
 
   open() {

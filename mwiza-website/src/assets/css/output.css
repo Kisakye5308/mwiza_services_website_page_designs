@@ -2378,6 +2378,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgb(255 255 255 / 0.05);
 }
 
+.border-primary\/20 {
+  border-color: rgb(242 223 13 / 0.2);
+}
+
 .bg-accent-brown {
   --tw-bg-opacity: 1;
   background-color: rgb(73 70 34 / var(--tw-bg-opacity, 1));
@@ -2484,6 +2488,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.bg-\[\#0d0d0d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 13 13 / var(--tw-bg-opacity, 1));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-br {
